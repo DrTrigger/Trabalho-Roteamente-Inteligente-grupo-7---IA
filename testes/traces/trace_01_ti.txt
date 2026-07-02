@@ -1,0 +1,294 @@
+PS C:\Users\breno\OneDrive\Área de Trabalho\projeto_ia_roteamento> & C:\Users\breno\AppData\Local\Programs\Python\Python313\python.exe "c:/Users/breno/OneDrive/Área de Trabalho/projeto_ia_roteamento/bot.py"
+
+==================================================
+🎓 SISTEMA DE TRIAGEM INSTITUCIONAL INICIADO 🎓
+Digite 'sair' para encerrar.
+==================================================
+
+👤 Aluno: Minha senha do portal do aluno não funciona.
+
+🤖 Processando...
+
+DEBUG ******************** Team ID: bot-de-suporte-institucional ********************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History    
+         will not be added to the context.                                                         
+DEBUG *************** Session ID: cd89db04-3289-4077-94e1-92542df2bc2c **************              
+DEBUG Creating new TeamSession: cd89db04-3289-4077-94e1-92542df2bc2c                               
+DEBUG ************* Team Run Start: 3c39301f-4291-41f9-b8e9-88011d85a413 ************              
+DEBUG Processing tools for model                                                                   
+DEBUG Added tool delegate_task_to_member                                                           
+DEBUG ------------------------- Google Response Stream Start ------------------------              
+DEBUG ------------------------- Model: gemini-3.1-flash-lite ------------------------              
+DEBUG ==================================== system ===================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to    
+      members when their expertise or tools are needed. For straightforward requests you can handle
+      directly — including using your own tools — respond without delegating.                      
+                                                                                                   
+      <team_members>                                                                               
+      <member id="equipe-de-ti" name="Equipe de TI">                                               
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)           
+      </member>                                                                                    
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                               
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)     
+      </member>                                                                                    
+      </team_members>                                                                              
+                                                                                                   
+      <how_to_respond>                                                                             
+      You operate in route mode. For requests that need member expertise, identify the single best 
+      member and delegate to them — their response is returned directly to the user. For requests  
+      you can handle directly — simple questions, using your own tools, or general conversation —  
+      respond without delegating.                                                                  
+                                                                                                   
+      When routing to a member:                                                                    
+      - Analyze the request to determine which member's role and tools are the best match.         
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team  
+      ID.                                                                                          
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow
+      the request.                                                                                 
+      - If no member is a clear fit, choose the closest match and include any additional context   
+      the member might need.                                                                       
+      </how_to_respond>                                                                            
+                                                                                                   
+      - Você é o roteador de triagem da universidade.                                              
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.  
+      - Regras:                                                                                    
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                      
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                              
+      - NUNCA responda diretamente. Apenas delegue.                                                
+      <additional_information>                                                                     
+      - Use markdown to format your answers.                                                       
+      </additional_information>                                                                    
+DEBUG ===================================== user ====================================              
+DEBUG Minha senha do portal do aluno não funciona.                                                 
+DEBUG ================================== assistant ==================================              
+DEBUG Tool Calls:                                                                                  
+        - ID: '9ajd3PIp'                                                                           
+          Name: 'delegate_task_to_member'                                                          
+          Arguments: 'member_id: equipe-de-ti, task: O aluno relatou que a senha do portal do aluno
+      não está funcionando e precisa de assistência para recuperar o acesso.'                      
+DEBUG **********************************  METRICS  **********************************              
+DEBUG * Tokens:                      input=586, output=55, total=641                               
+DEBUG * Duration:                    2.0411s                                                       
+DEBUG * Tokens per second:           26.9463 tokens/s                                              
+DEBUG * Time to first token:         2.0327s                                                       
+DEBUG **********************************  METRICS  **********************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)                           
+DEBUG **************************** Agent ID: equipe-de-ti ***************************              
+DEBUG Creating new AgentSession: cd89db04-3289-4077-94e1-92542df2bc2c                              
+DEBUG ************ Agent Run Start: 0cf45fdc-d3fa-4783-916e-4318c6a51f87 ************              
+DEBUG ------------------------- Google Response Stream Start ------------------------              
+DEBUG ------------------------- Model: gemini-3.1-flash-lite ------------------------              
+DEBUG ==================================== system ===================================              
+DEBUG <your_role>                                                                                  
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                   
+      </your_role>                                                                                 
+                                                                                                   
+      - Você é o técnico de Suporte de TI da universidade.                                         
+      - Forneça passos lógicos e formatados em markdown para resolver falhas tecnológicas.         
+DEBUG ===================================== user ====================================              
+DEBUG O aluno relatou que a senha do portal do aluno não está funcionando e precisa de assistência 
+      para recuperar o acesso.                                                                     
+DEBUG ========================================= assistant ==========================================              
+DEBUG Olá! Compreendo a urgência, pois o acesso ao portal é essencial para a vida acadêmica. Como técnico de      
+      suporte da universidade, seguirei os protocolos de segurança para restabelecer seu acesso.                  
+                                                                                                                  
+      Por favor, siga os passos abaixo para tentar a recuperação ou entender como proceder:                       
+                                                                                                                  
+      ### 1. Verificações Iniciais (Autoatendimento)                                                              
+      Antes de solicitarmos uma redefinição forçada, tente estes passos:                                          
+      *   **Limpeza de Cache:** Abra o navegador em uma **janela anônima** (Ctrl+Shift+N) e tente acessar o portal
+      novamente. Às vezes, o navegador salva senhas antigas que causam conflito.                                  
+      *   **Verificação de Teclado:** Certifique-se de que a tecla `Caps Lock` não está ativada e que o idioma do 
+      teclado está configurado corretamente (ABNT2).                                                              
+      *   **Recuperação por E-mail:** Na página de login do portal, clique no link **"Esqueci minha senha"**. Siga
+      as instruções enviadas para o seu e-mail institucional ou e-mail pessoal cadastrado no ato da matrícula.    
+                                                                                                                  
+      ### 2. Caso o acesso não seja restaurado                                                                    
+      Se você não recebeu o e-mail de recuperação ou não tem acesso ao e-mail cadastrado, precisaremos realizar a 
+      verificação de identidade:                                                                                  
+                                                                                                                  
+      1.  **Envie um e-mail para o suporte:** Utilize seu e-mail institucional (ou o e-mail cadastrado no sistema)
+      para `suporte.ti@universidade.edu.br`.                                                                      
+      2.  **Assunto:** "Solicitação de Redefinição de Senha - [Seu Nome Completo]".                               
+      3.  **Corpo do E-mail:** Informe:                                                                           
+          *   **Nome completo:**                                                                                  
+          *   **Número de matrícula:**                                                                            
+          *   **CPF:**                                                                                            
+          *   **Breve descrição do erro:** (Ex: "Aparece a mensagem 'Usuário ou senha inválidos' mesmo após       
+      redefinir").                                                                                                
+      4.  **Anexo:** Anexe uma foto de um documento oficial com foto (RG ou CNH) para validarmos sua identidade.  
+                                                                                                                  
+      ### 3. Procedimento de Segurança (Protocolo da TI)                                                          
+      *   **Segurança:** Nunca forneça sua senha atual ou nova via e-mail ou chat para ninguém.                   
+      *   **Senha Temporária:** Após a validação dos seus dados, a equipe de TI enviará uma **senha temporária**. 
+      *   **Primeiro Acesso:** Assim que logar com a senha temporária, o sistema exigirá que você crie uma senha  
+      definitiva. Escolha uma senha forte (mínimo de 8 caracteres, incluindo números e caracteres especiais).     
+                                                                                                                  
+      ---                                                                                                         
+      **Dica:** Caso você esteja presencialmente no campus, pode comparecer ao setor de TI com seu documento      
+      original, e realizaremos a redefinição de forma imediata em nosso terminal de atendimento.                  
+                                                                                                                  
+      Estou à disposição caso precise de mais auxílio!                                                            
+DEBUG *****************************************  METRICS  ******************************************              
+DEBUG * Tokens:                      input=87, output=634, total=721                                              
+DEBUG * Duration:                    3.8073s                                                                      
+DEBUG * Tokens per second:           166.5215 tokens/s                                                            
+DEBUG * Time to first token:         1.7603s                                                                      
+DEBUG *****************************************  METRICS  ******************************************              
+DEBUG --------------------------------- Google Response Stream End ---------------------------------              
+DEBUG Added RunOutput to Agent Session                                                                            
+DEBUG ******************** Agent Run End: 0cf45fdc-d3fa-4783-916e-4318c6a51f87 *********************              
+DEBUG Updated team run context with member name: Equipe de TI                                                     
+DEBUG Added RunOutput to Team Session                                                                             
+DEBUG ============================================ tool ============================================              
+DEBUG Tool call Id: 9ajd3PIp                                                                                      
+DEBUG Olá! Compreendo a urgência, pois o acesso ao portal é essencial para a vida acadêmica. Como técnico de      
+      suporte da universidade, seguirei os protocolos de segurança para restabelecer seu acesso.                  
+                                                                                                                  
+      Por favor, siga os passos abaixo para tentar a recuperação ou entender como proceder:                       
+                                                                                                                  
+      ### 1. Verificações Iniciais (Autoatendimento)                                                              
+      Antes de solicitarmos uma redefinição forçada, tente estes passos:                                          
+      *   **Limpeza de Cache:** Abra o navegador em uma **janela anônima** (Ctrl+Shift+N) e tente acessar o portal
+      novamente. Às vezes, o navegador salva senhas antigas que causam conflito.                                  
+      *   **Verificação de Teclado:** Certifique-se de que a tecla `Caps Lock` não está ativada e que o idioma do 
+      teclado está configurado corretamente (ABNT2).                                                              
+      *   **Recuperação por E-mail:** Na página de login do portal, clique no link **"Esqueci minha senha"**. Siga
+      as instruções enviadas para o seu e-mail institucional ou e-mail pessoal cadastrado no ato da matrícula.    
+                                                                                                                  
+      ### 2. Caso o acesso não seja restaurado                                                                    
+      Se você não recebeu o e-mail de recuperação ou não tem acesso ao e-mail cadastrado, precisaremos realizar a 
+      verificação de identidade:                                                                                  
+                                                                                                                  
+      1.  **Envie um e-mail para o suporte:** Utilize seu e-mail institucional (ou o e-mail cadastrado no sistema)
+      para `suporte.ti@universidade.edu.br`.                                                                      
+      2.  **Assunto:** "Solicitação de Redefinição de Senha - [Seu Nome Completo]".                               
+      3.  **Corpo do E-mail:** Informe:                                                                           
+          *   **Nome completo:**                                                                                  
+          *   **Número de matrícula:**                                                                            
+          *   **CPF:**                                                                                            
+          *   **Breve descrição do erro:** (Ex: "Aparece a mensagem 'Usuário ou senha inválidos' mesmo após       
+      redefinir").                                                                                                
+      4.  **Anexo:** Anexe uma foto de um documento oficial com foto (RG ou CNH) para validarmos sua identidade.  
+                                                                                                                  
+      ### 3. Procedimento de Segurança (Protocolo da TI)                                                          
+      *   **Segurança:** Nunca forneça sua senha atual ou nova via e-mail ou chat para ninguém.                   
+      *   **Senha Temporária:** Após a validação dos seus dados, a equipe de TI enviará uma **senha temporária**. 
+      *   **Primeiro Acesso:** Assim que logar com a senha temporária, o sistema exigirá que você crie uma senha  
+      definitiva. Escolha uma senha forte (mínimo de 8 caracteres, incluindo números e caracteres especiais).     
+                                                                                                                  
+      ---                                                                                                         
+      **Dica:** Caso você esteja presencialmente no campus, pode comparecer ao setor de TI com seu documento      
+      original, e realizaremos a redefinição de forma imediata em nosso terminal de atendimento.                  
+                                                                                                                  
+      Estou à disposição caso precise de mais auxílio!                                                            
+DEBUG --------------------------------- Google Response Stream End ---------------------------------              
+DEBUG Added RunOutput to Team Session                                                                             
+DEBUG ********************* Team Run End: 3c39301f-4291-41f9-b8e9-88011d85a413 *********************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                ┃
+┃ Minha senha do portal do aluno não funciona.                                                                   ┃
+┃                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Equipe de TI Response ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                ┃
+┃ Olá! Compreendo a urgência, pois o acesso ao portal é essencial para a vida acadêmica. Como técnico de suporte ┃
+┃ da universidade, seguirei os protocolos de segurança para restabelecer seu acesso.                             ┃
+┃                                                                                                                ┃
+┃ Por favor, siga os passos abaixo para tentar a recuperação ou entender como proceder:                          ┃
+┃                                                                                                                ┃
+┃ 1. Verificações Iniciais (Autoatendimento)                                                                     ┃
+┃                                                                                                                ┃
+┃ Antes de solicitarmos uma redefinição forçada, tente estes passos:                                             ┃
+┃                                                                                                                ┃
+┃  • Limpeza de Cache: Abra o navegador em uma janela anônima (Ctrl+Shift+N) e tente acessar o portal novamente. ┃
+┃    Às vezes, o navegador salva senhas antigas que causam conflito.                                             ┃
+┃  • Verificação de Teclado: Certifique-se de que a tecla Caps Lock não está ativada e que o idioma do teclado   ┃
+┃    está configurado corretamente (ABNT2).                                                                      ┃
+┃  • Recuperação por E-mail: Na página de login do portal, clique no link "Esqueci minha senha". Siga as         ┃
+┃    instruções enviadas para o seu e-mail institucional ou e-mail pessoal cadastrado no ato da matrícula.       ┃
+┃                                                                                                                ┃
+┃ 2. Caso o acesso não seja restaurado                                                                           ┃
+┃                                                                                                                ┃
+┃ Se você não recebeu o e-mail de recuperação ou não tem acesso ao e-mail cadastrado, precisaremos realizar a    ┃
+┃ verificação de identidade:                                                                                     ┃
+┃                                                                                                                ┃
+┃  1 Envie um e-mail para o suporte: Utilize seu e-mail institucional (ou o e-mail cadastrado no sistema) para   ┃
+┃    suporte.ti@universidade.edu.br.                                                                             ┃
+┃  2 Assunto: "Solicitação de Redefinição de Senha - [Seu Nome Completo]".                                       ┃
+┃  3 Corpo do E-mail: Informe:                                                                                   ┃
+┃     • Nome completo:                                                                                           ┃
+┃     • Número de matrícula:                                                                                     ┃
+┃     • CPF:                                                                                                     ┃
+┃     • Breve descrição do erro: (Ex: "Aparece a mensagem 'Usuário ou senha inválidos' mesmo após redefinir").   ┃
+┃  4 Anexo: Anexe uma foto de um documento oficial com foto (RG ou CNH) para validarmos sua identidade.          ┃
+┃                                                                                                                ┃
+┃ 3. Procedimento de Segurança (Protocolo da TI)                                                                 ┃
+┃                                                                                                                ┃
+┃  • Segurança: Nunca forneça sua senha atual ou nova via e-mail ou chat para ninguém.                           ┃
+┃  • Senha Temporária: Após a validação dos seus dados, a equipe de TI enviará uma senha temporária.             ┃
+┃  • Primeiro Acesso: Assim que logar com a senha temporária, o sistema exigirá que você crie uma senha          ┃
+┃    definitiva. Escolha uma senha forte (mínimo de 8 caracteres, incluindo números e caracteres especiais).     ┃
+┃                                                                                                                ┃
+┃ -------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                ┃
+┃ Dica: Caso você esteja presencialmente no campus, pode comparecer ao setor de TI com seu documento original, e ┃
+┃ realizaremos a redefinição de forma imediata em nosso terminal de atendimento.                                 ┃
+┃                                                                                                                ┃
+┃ Estou à disposição caso precise de mais auxílio!                                                               ┃
+┃                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Team Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                ┃
+┃ • delegate_task_to_member(member_id=equipe-de-ti, task=O aluno relatou que a senha do portal do aluno não está ┃
+┃   funcionando e precisa de assistência para recuperar o acesso.)                                               ┃
+┃                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (8.0s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                ┃
+┃ Olá! Compreendo a urgência, pois o acesso ao portal é essencial para a vida acadêmica. Como técnico de suporte ┃
+┃ da universidade, seguirei os protocolos de segurança para restabelecer seu acesso.                             ┃
+┃                                                                                                                ┃
+┃ Por favor, siga os passos abaixo para tentar a recuperação ou entender como proceder:                          ┃
+┃                                                                                                                ┃
+┃ 1. Verificações Iniciais (Autoatendimento)                                                                     ┃
+┃                                                                                                                ┃
+┃ Antes de solicitarmos uma redefinição forçada, tente estes passos:                                             ┃
+┃                                                                                                                ┃
+┃  • Limpeza de Cache: Abra o navegador em uma janela anônima (Ctrl+Shift+N) e tente acessar o portal novamente. ┃
+┃    Às vezes, o navegador salva senhas antigas que causam conflito.                                             ┃
+┃  • Verificação de Teclado: Certifique-se de que a tecla Caps Lock não está ativada e que o idioma do teclado   ┃
+┃    está configurado corretamente (ABNT2).                                                                      ┃
+┃  • Recuperação por E-mail: Na página de login do portal, clique no link "Esqueci minha senha". Siga as         ┃
+┃    instruções enviadas para o seu e-mail institucional ou e-mail pessoal cadastrado no ato da matrícula.       ┃
+┃                                                                                                                ┃
+┃ 2. Caso o acesso não seja restaurado                                                                           ┃
+┃                                                                                                                ┃
+┃ Se você não recebeu o e-mail de recuperação ou não tem acesso ao e-mail cadastrado, precisaremos realizar a    ┃
+┃ verificação de identidade:                                                                                     ┃
+┃                                                                                                                ┃
+┃  1 Envie um e-mail para o suporte: Utilize seu e-mail institucional (ou o e-mail cadastrado no sistema) para   ┃
+┃    suporte.ti@universidade.edu.br.                                                                             ┃
+┃  2 Assunto: "Solicitação de Redefinição de Senha - [Seu Nome Completo]".                                       ┃
+┃  3 Corpo do E-mail: Informe:                                                                                   ┃
+┃     • Nome completo:                                                                                           ┃
+┃     • Número de matrícula:                                                                                     ┃
+┃     • CPF:                                                                                                     ┃
+┃     • Breve descrição do erro: (Ex: "Aparece a mensagem 'Usuário ou senha inválidos' mesmo após redefinir").   ┃
+┃  4 Anexo: Anexe uma foto de um documento oficial com foto (RG ou CNH) para validarmos sua identidade.          ┃
+┃                                                                                                                ┃
+┃ 3. Procedimento de Segurança (Protocolo da TI)                                                                 ┃
+┃                                                                                                                ┃
+┃  • Segurança: Nunca forneça sua senha atual ou nova via e-mail ou chat para ninguém.                           ┃
+┃  • Senha Temporária: Após a validação dos seus dados, a equipe de TI enviará uma senha temporária.             ┃
+┃  • Primeiro Acesso: Assim que logar com a senha temporária, o sistema exigirá que você crie uma senha          ┃
+┃    definitiva. Escolha uma senha forte (mínimo de 8 caracteres, incluindo números e caracteres especiais).     ┃
+┃                                                                                                                ┃
+┃ -------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                ┃
+┃ Dica: Caso você esteja presencialmente no campus, pode comparecer ao setor de TI com seu documento original, e ┃
+┃ realizaremos a redefinição de forma imediata em nosso terminal de atendimento.                                 ┃
+┃                                                                                                                ┃
+┃ Estou à disposição caso precise de mais auxílio!                                                               ┃
+┃                                                                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

@@ -1,0 +1,243 @@
+# MVP — projeto_ia_roteamento.py
+# Caso ID: 04
+# Prompt: "Não consigo acessar a rede Wi-Fi da biblioteca."
+# Destino esperado: TI
+# Executado em: 2026-06-19 20:10:12
+#===========================================================
+
+--- Execução caso 04 ---
+session_id: 74c86e0a-01c7-4010-b7ef-12ec1f03e0d8
+active_sector: (nenhum)
+prompt: Não consigo acessar a rede Wi-Fi da biblioteca.
+
+DEBUG ********** Team ID: bot-de-suporte-institucional ***********              
+DEBUG ***** Session ID: 74c86e0a-01c7-4010-b7ef-12ec1f03e0d8 *****              
+DEBUG Creating new TeamSession: 74c86e0a-01c7-4010-b7ef-12ec1f03e0d8            
+DEBUG *** Team Run Start: af1421b3-fd46-4b74-9138-6667cf58d313 ***              
+DEBUG Processing tools for model                                                
+DEBUG Added tool delegate_task_to_member                                        
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's      
+      request. Delegate to members when their expertise or tools are needed. For
+      straightforward requests you can handle directly — including using your   
+      own tools — respond without delegating.                                   
+                                                                                
+      <team_members>                                                            
+      <member id="equipe-de-ti" name="Equipe de TI">                            
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas,        
+      infraestrutura)                                                           
+      </member>                                                                 
+      <member id="secretaria-academica" name="Secretaria Acadêmica">            
+        Role: Resolve questões administrativas (matrícula, documentos,          
+      trancamento, histórico escolar)                                           
+      </member>                                                                 
+      </team_members>                                                           
+                                                                                
+      <how_to_respond>                                                          
+      You operate in route mode. For requests that need member expertise,       
+      identify the single best member and delegate to them — their response is  
+      returned directly to the user. For requests you can handle directly —     
+      simple questions, using your own tools, or general conversation — respond 
+      without delegating.                                                       
+                                                                                
+      When routing to a member:                                                 
+      - Analyze the request to determine which member's role and tools are the  
+      best match.                                                               
+      - Delegate to exactly one member. Use only the member's ID — do not prefix
+      it with the team ID.                                                      
+      - Write the task to faithfully represent the user's full intent. Do not   
+      reinterpret or narrow the request.                                        
+      - If no member is a clear fit, choose the closest match and include any   
+      additional context the member might need.                                 
+      </how_to_respond>                                                         
+                                                                                
+      - Você é o roteador inteligente do Portal de Atendimento do IFES.         
+      - Sua função principal é delegar para UM membro especialista. Nunca       
+      misture os setores.                                                       
+      -                                                                         
+      - Secretaria Acadêmica (secretaria-academica):                            
+      - - matrícula, cancelamento, trancamento, documentos, diploma, certificado
+      - - histórico ESCOLAR (documento acadêmico), declarações, requerimentos,  
+      protocolo                                                                 
+      - - correção de dados cadastrais (nome errado no portal)                  
+      -                                                                         
+      - Equipe de TI (equipe-de-ti):                                            
+      - - senhas, login, e-mail institucional, VPN, Wi-Fi, portal inacessível   
+      - - erros técnicos, site fora do ar, Q-Acadêmico com falha, sistemas e    
+      infraestrutura                                                            
+      -                                                                         
+      - IMPORTANTE:                                                             
+      - - 'histórico escolar' ou 'solicitar histórico' = documento da           
+      Secretaria, NUNCA TI.                                                     
+      - - Se a mensagem menciona documento E problema técnico (ex: diploma +    
+      site fora do ar), priorize TI.                                            
+      - - Se o aluno mudar de assunto na mesma conversa, delegue para o setor da
+      NOVA pergunta.                                                            
+      - - Se a NOVA mensagem mencionar login, senha ou erro técnico, mesmo após 
+      assunto administrativo, delegue para TI.                                  
+      - - Em continuações do MESMO assunto (ex: 'agora vou onde?'), delegue ao  
+      setor que estava tratando aquele tema.                                    
+      - - Se a intenção for vaga (ex: 'preciso de ajuda'), pergunte se é TI ou  
+      Secretaria ANTES de delegar.                                              
+      -                                                                         
+      - Exemplos:                                                               
+      - - 'Preciso solicitar meu histórico escolar' -> secretaria-academica     
+      - - 'Esqueci minha senha do portal' -> equipe-de-ti                       
+      - - 'Preciso do diploma, mas o site está fora do ar' -> equipe-de-ti      
+      - - 'Meu nome está errado no portal' -> secretaria-academica              
+      - - 'Olá, gostaria de ajuda' -> pergunte TI ou Secretaria (não delegue    
+      ainda)                                                                    
+      <additional_information>                                                  
+      - Use markdown to format your answers.                                    
+      </additional_information>                                                 
+DEBUG =========================== user ===========================              
+DEBUG ATENÇÃO: a nova mensagem contém termos técnicos (login, senha, acesso,    
+      erro). Avalie se o setor mudou para a Equipe de TI.                       
+                                                                                
+      Use o histórico abaixo apenas como contexto. Responda somente à NOVA      
+      mensagem do aluno — o assunto pode ter mudado de setor.                   
+                                                                                
+      Sistema: Olá! Bem-vindo ao **Portal de Atendimento Institucional do       
+      IFES**.                                                                   
+                                                                                
+      Nossa IA faz a triagem automática e encaminha sua solicitação para o setor
+      correto:                                                                  
+                                                                                
+      🖥️ **TI** — senhas, sistemas, acesso, e-mail                              
+      📋 **Secretaria** — matrícula, documentos, trancamentos, histórico        
+                                                                                
+      Como posso ajudá-lo hoje?                                                 
+                                                                                
+      Nova mensagem do aluno: Não consigo acessar a rede Wi-Fi da biblioteca.   
+DEBUG ======================== assistant =========================              
+DEBUG Tool Calls:                                                               
+        - ID: 'ad119H7o'                                                        
+          Name: 'delegate_task_to_member'                                       
+          Arguments: 'member_id: equipe-de-ti, task: O aluno relatou que não    
+      consegue acessar a rede Wi-Fi da biblioteca. Por favor, forneça o suporte 
+      necessário.'                                                              
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=1092, output=57, total=1149          
+DEBUG * Duration:                    1.3357s                                    
+DEBUG * Tokens per second:           42.6753 tokens/s                           
+DEBUG ************************  METRICS  *************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)        
+DEBUG Adding messages from history for Equipe de TI                             
+DEBUG Member IDs to filter by were provided. The skip_member_messages flag will 
+      be ignored.                                                               
+DEBUG ***** Session ID: 74c86e0a-01c7-4010-b7ef-12ec1f03e0d8 *****              
+DEBUG ****************** Agent ID: equipe-de-ti ******************              
+DEBUG Creating new AgentSession: 74c86e0a-01c7-4010-b7ef-12ec1f03e0d8           
+DEBUG ** Agent Run Start: e6b08ce7-3f98-44c0-b6aa-064dac8222f8 ***              
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG <your_role>                                                               
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)
+      </your_role>                                                              
+                                                                                
+      - Você é o técnico de Suporte de TI do IFES.                              
+      - Atenda APENAS problemas técnicos: senhas, login, e-mail, VPN, Wi-Fi,    
+      erros de sistema.                                                         
+      - NÃO trate de matrícula, documentos, histórico escolar ou trancamento.   
+      - Forneça passos claros e objetivos em markdown.                          
+      - Use listas numeradas quando possível.                                   
+DEBUG =========================== user ===========================              
+DEBUG O aluno relatou que não consegue acessar a rede Wi-Fi da biblioteca. Por  
+      favor, forneça o suporte necessário.                                      
+DEBUG ======================== assistant =========================              
+DEBUG Olá. Sou o suporte técnico do IFES e estou aqui para auxiliar com o       
+      problema de acesso à rede Wi-Fi.                                          
+                                                                                
+      Para acessar a rede sem fio (como a **eduroam**), o aluno deve seguir os  
+      passos abaixo:                                                            
+                                                                                
+      1. **Verifique as credenciais:** Certifique-se de que o usuário e senha   
+      são os mesmos utilizados no portal do aluno (SUAP).                       
+      2. **Configuração da rede:**                                              
+         - Ao selecionar a rede **eduroam**, verifique se os campos estão       
+      preenchidos da seguinte forma:                                            
+           - **Método EAP:** PEAP                                               
+           - **Autenticação da Fase 2:** MSCHAPV2                               
+           - **Certificado CA:** "Não validar" ou "Não especificar" (caso o     
+      dispositivo solicite).                                                    
+      3. **Formato do usuário:** O nome de usuário deve ser digitado com o      
+      domínio completo: `seu-usuario@ifes.edu.br`.                              
+      4. **Esquecer rede:** Caso tenha tentado acessar anteriormente com uma    
+      senha incorreta, vá nas configurações de Wi-Fi do dispositivo, selecione a
+      rede "eduroam", escolha **"Esquecer rede"** e tente conectar novamente    
+      seguindo o passo 2.                                                       
+                                                                                
+      **Observações importantes:**                                              
+      *   Se o erro persistir, tente acessar a rede de outro dispositivo para   
+      descartar falhas no aparelho.                                             
+      *   Caso o erro seja "Senha incorreta", tente redefinir sua senha de      
+      acesso ao sistema pelo portal do [SUAP](https://suap.ifes.edu.br) e       
+      aguarde 15 minutos para a sincronização dos servidores.                   
+                                                                                
+      Se após esses passos o acesso continuar indisponível, por favor, informe  
+      qual o modelo do dispositivo (celular ou notebook) e qual a mensagem de   
+      erro específica que aparece na tela.                                      
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=136, output=383, total=519           
+DEBUG * Duration:                    2.2308s                                    
+DEBUG * Tokens per second:           171.6861 tokens/s                          
+DEBUG * Time to first token:         2.2308s                                    
+DEBUG ************************  METRICS  *************************              
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Agent Session                                          
+DEBUG Table agno_approvals does not exist                                       
+DEBUG *** Agent Run End: e6b08ce7-3f98-44c0-b6aa-064dac8222f8 ****              
+DEBUG Updated team run context with member name: Equipe de TI                   
+DEBUG Added RunOutput to Team Session                                           
+DEBUG =========================== tool ===========================              
+DEBUG Tool call Id: ad119H7o                                                    
+DEBUG Olá. Sou o suporte técnico do IFES e estou aqui para auxiliar com o       
+      problema de acesso à rede Wi-Fi.                                          
+                                                                                
+      Para acessar a rede sem fio (como a **eduroam**), o aluno deve seguir os  
+      passos abaixo:                                                            
+                                                                                
+      1. **Verifique as credenciais:** Certifique-se de que o usuário e senha   
+      são os mesmos utilizados no portal do aluno (SUAP).                       
+      2. **Configuração da rede:**                                              
+         - Ao selecionar a rede **eduroam**, verifique se os campos estão       
+      preenchidos da seguinte forma:                                            
+           - **Método EAP:** PEAP                                               
+           - **Autenticação da Fase 2:** MSCHAPV2                               
+           - **Certificado CA:** "Não validar" ou "Não especificar" (caso o     
+      dispositivo solicite).                                                    
+      3. **Formato do usuário:** O nome de usuário deve ser digitado com o      
+      domínio completo: `seu-usuario@ifes.edu.br`.                              
+      4. **Esquecer rede:** Caso tenha tentado acessar anteriormente com uma    
+      senha incorreta, vá nas configurações de Wi-Fi do dispositivo, selecione a
+      rede "eduroam", escolha **"Esquecer rede"** e tente conectar novamente    
+      seguindo o passo 2.                                                       
+                                                                                
+      **Observações importantes:**                                              
+      *   Se o erro persistir, tente acessar a rede de outro dispositivo para   
+      descartar falhas no aparelho.                                             
+      *   Caso o erro seja "Senha incorreta", tente redefinir sua senha de      
+      acesso ao sistema pelo portal do [SUAP](https://suap.ifes.edu.br) e       
+      aguarde 15 minutos para a sincronização dos servidores.                   
+                                                                                
+      Se após esses passos o acesso continuar indisponível, por favor, informe  
+      qual o modelo do dispositivo (celular ou notebook) e qual a mensagem de   
+      erro específica que aparece na tela.                                      
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Team Session                                           
+DEBUG Created or updated TeamSession record:                                    
+      74c86e0a-01c7-4010-b7ef-12ec1f03e0d8                                      
+DEBUG Table agno_approvals does not exist                                       
+DEBUG **** Team Run End: af1421b3-fd46-4b74-9138-6667cf58d313 ****              
+
+--- Resultado ---
+badge: 🖥️ Equipe de TI
+sector: ti
+resposta (início): Olá. Sou o suporte técnico do IFES e estou aqui para auxiliar com o problema de acesso à rede Wi-Fi.
+
+Para acessar a rede sem fio (como a **eduroam**), o aluno deve seguir os passos abaixo:
+
+1. **Verifique as credenciais:** Certifique-se de que o usuário e senha são os mesmos utilizados no portal do...

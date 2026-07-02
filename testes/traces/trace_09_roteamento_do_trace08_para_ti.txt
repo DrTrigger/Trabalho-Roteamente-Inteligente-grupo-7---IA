@@ -1,0 +1,536 @@
+PS C:\Users\breno\OneDrive\Área de Trabalho\projeto_ia_roteamento> python bot.py                                       
+
+==================================================
+🎓 SISTEMA DE TRIAGEM INSTITUCIONAL INICIADO 🎓
+Digite 'sair' para encerrar.
+==================================================
+
+👤 Aluno: Onde pego o comprovante de matrícula para o estágio?
+
+🤖 Processando...
+
+DEBUG ************************************ Team ID: bot-de-suporte-institucional *************************************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History will not be added to the context.   
+DEBUG ******************************* Session ID: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e *******************************              
+DEBUG Creating new TeamSession: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e                                                                
+DEBUG ***************************** Team Run Start: c1870d9f-c664-47a6-9195-4597e1b38a2d *****************************              
+DEBUG Processing tools for model                                                                                                    
+DEBUG Added tool delegate_task_to_member                                                                                            
+DEBUG ----------------------------------------- Google Response Stream Start -----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite -----------------------------------------              
+DEBUG ==================================================== system ====================================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to members when their expertise or     
+      tools are needed. For straightforward requests you can handle directly — including using your own tools — respond without     
+      delegating.                                                                                                                   
+                                                                                                                                    
+      <team_members>                                                                                                                
+      <member id="equipe-de-ti" name="Equipe de TI">                                                                                
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                            
+      </member>                                                                                                                     
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                                                                
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                      
+      </member>                                                                                                                     
+      </team_members>                                                                                                               
+                                                                                                                                    
+      <how_to_respond>                                                                                                              
+      You operate in route mode. For requests that need member expertise, identify the single best member and delegate to them —    
+      their response is returned directly to the user. For requests you can handle directly — simple questions, using your own      
+      tools, or general conversation — respond without delegating.                                                                  
+                                                                                                                                    
+      When routing to a member:                                                                                                     
+      - Analyze the request to determine which member's role and tools are the best match.                                          
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team ID.                               
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow the request.                    
+      - If no member is a clear fit, choose the closest match and include any additional context the member might need.             
+      </how_to_respond>                                                                                                             
+                                                                                                                                    
+      - Você é o roteador de triagem da universidade.                                                                               
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.                                   
+      - Regras:                                                                                                                     
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                                                       
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                                                               
+      - NUNCA responda diretamente. Apenas delegue.                                                                                 
+      <additional_information>                                                                                                      
+      - Use markdown to format your answers.                                                                                        
+      </additional_information>                                                                                                     
+DEBUG ===================================================== user =====================================================              
+DEBUG Onde pego o comprovante de matrícula para o estágio?                                                                          
+DEBUG ================================================== assistant ===================================================              
+DEBUG Tool Calls:                                                                                                                   
+        - ID: 'AQyeS3sy'                                                                                                            
+          Name: 'delegate_task_to_member'                                                                                           
+          Arguments: 'member_id: secretaria-acadêmica, task: O aluno deseja saber como obter o comprovante de matrícula para fins de
+      estágio. Por favor, forneça as orientações necessárias para essa solicitação.'                                                
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG * Tokens:                      input=589, output=61, total=650                                                                
+DEBUG * Duration:                    1.2208s                                                                                        
+DEBUG * Tokens per second:           49.9656 tokens/s                                                                               
+DEBUG * Time to first token:         1.2129s                                                                                        
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG Running: delegate_task_to_member(member_id=secretaria-acadêmica, task=...)                                                    
+DEBUG **************************************** Agent ID: secretaria-acadêmica ****************************************              
+DEBUG Creating new AgentSession: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e                                                               
+DEBUG **************************** Agent Run Start: 9c7da756-061b-4a01-866a-33170f24d179 *****************************              
+DEBUG ----------------------------------------- Google Response Stream Start -----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite -----------------------------------------              
+DEBUG ==================================================== system ====================================================              
+DEBUG <your_role>                                                                                                                   
+      Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                              
+      </your_role>                                                                                                                  
+                                                                                                                                    
+      - Você é o atendente da Secretaria Acadêmica.                                                                                 
+      - Mantenha um tom formal e institucional.                                                                                     
+      - Explique os procedimentos burocráticos de forma clara.                                                                      
+DEBUG ===================================================== user =====================================================              
+DEBUG O aluno deseja saber como obter o comprovante de matrícula para fins de estágio. Por favor, forneça as orientações necessárias
+      para essa solicitação.                                                                                                        
+DEBUG ================================================== assistant ===================================================              
+DEBUG Prezado(a) aluno(a),                                                                                                          
+                                                                                                                                    
+      Para obter o seu comprovante de matrícula destinado a fins de estágio, informamos que este procedimento pode ser realizado de 
+      forma autônoma através do nosso sistema acadêmico online.                                                                     
+                                                                                                                                    
+      Siga as orientações abaixo:                                                                                                   
+                                                                                                                                    
+      1.  **Acesse o Portal do Aluno:** Utilize o seu login e senha institucional no endereço eletrônico oficial da secretaria      
+      acadêmica.                                                                                                                    
+      2.  **Localize a aba "Serviços" ou "Documentos":** No menu principal, procure pela opção correspondente a documentos ou       
+      declarações.                                                                                                                  
+      3.  **Selecione "Declaração de Matrícula":** O sistema gerará automaticamente um arquivo em formato PDF contendo as           
+      informações necessárias, incluindo a carga horária e a regularidade do semestre letivo vigente.                               
+      4.  **Autenticidade:** Ressaltamos que o documento gerado pelo sistema possui um código de autenticidade (QR Code ou código   
+      alfanumérico) que garante a sua validade jurídica perante a empresa concedente do estágio.                                    
+                                                                                                                                    
+      **Observações importantes:**                                                                                                  
+                                                                                                                                    
+      *   **Validação:** Caso a empresa exija a assinatura manual ou o carimbo da Secretaria Acadêmica, após gerar o documento      
+      online, você deverá comparecer presencialmente ao nosso setor, no horário de atendimento das [inserir horário], para que      
+      possamos proceder com a devida validação física.                                                                              
+      *   **Dados Cadastrais:** Certifique-se de que seus dados pessoais e o semestre letivo estejam corretos antes de imprimir o   
+      documento. Caso haja qualquer divergência, entre em contato com esta secretaria para a devida atualização.                    
+                                                                                                                                    
+      Caso encontre dificuldades técnicas para acessar o portal ou emitir o documento, solicitamos que nos envie um e-mail para     
+      [inserir endereço de e-mail] contendo o seu nome completo e número de matrícula para que possamos auxiliá-lo.                 
+                                                                                                                                    
+      Atenciosamente,                                                                                                               
+                                                                                                                                    
+      **Secretaria Acadêmica**                                                                                                      
+      [Nome da Instituição]                                                                                                         
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG * Tokens:                      input=97, output=414, total=511                                                                
+DEBUG * Duration:                    2.4550s                                                                                        
+DEBUG * Tokens per second:           168.6340 tokens/s                                                                              
+DEBUG * Time to first token:         1.0490s                                                                                        
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG ------------------------------------------ Google Response Stream End ------------------------------------------              
+DEBUG Added RunOutput to Agent Session                                                                                              
+DEBUG ***************************** Agent Run End: 9c7da756-061b-4a01-866a-33170f24d179 ******************************              
+DEBUG Updated team run context with member name: Secretaria Acadêmica                                                               
+DEBUG Added RunOutput to Team Session                                                                                               
+DEBUG ===================================================== tool =====================================================              
+DEBUG Tool call Id: AQyeS3sy                                                                                                        
+DEBUG Prezado(a) aluno(a),                                                                                                          
+                                                                                                                                    
+      Para obter o seu comprovante de matrícula destinado a fins de estágio, informamos que este procedimento pode ser realizado de 
+      forma autônoma através do nosso sistema acadêmico online.                                                                     
+                                                                                                                                    
+      Siga as orientações abaixo:                                                                                                   
+                                                                                                                                    
+      1.  **Acesse o Portal do Aluno:** Utilize o seu login e senha institucional no endereço eletrônico oficial da secretaria      
+      acadêmica.                                                                                                                    
+      2.  **Localize a aba "Serviços" ou "Documentos":** No menu principal, procure pela opção correspondente a documentos ou       
+      declarações.                                                                                                                  
+      3.  **Selecione "Declaração de Matrícula":** O sistema gerará automaticamente um arquivo em formato PDF contendo as           
+      informações necessárias, incluindo a carga horária e a regularidade do semestre letivo vigente.                               
+      4.  **Autenticidade:** Ressaltamos que o documento gerado pelo sistema possui um código de autenticidade (QR Code ou código   
+      alfanumérico) que garante a sua validade jurídica perante a empresa concedente do estágio.                                    
+                                                                                                                                    
+      **Observações importantes:**                                                                                                  
+                                                                                                                                    
+      *   **Validação:** Caso a empresa exija a assinatura manual ou o carimbo da Secretaria Acadêmica, após gerar o documento      
+      online, você deverá comparecer presencialmente ao nosso setor, no horário de atendimento das [inserir horário], para que      
+      possamos proceder com a devida validação física.                                                                              
+      *   **Dados Cadastrais:** Certifique-se de que seus dados pessoais e o semestre letivo estejam corretos antes de imprimir o   
+      documento. Caso haja qualquer divergência, entre em contato com esta secretaria para a devida atualização.                    
+                                                                                                                                    
+      Caso encontre dificuldades técnicas para acessar o portal ou emitir o documento, solicitamos que nos envie um e-mail para     
+      [inserir endereço de e-mail] contendo o seu nome completo e número de matrícula para que possamos auxiliá-lo.                 
+                                                                                                                                    
+      Atenciosamente,                                                                                                               
+                                                                                                                                    
+      **Secretaria Acadêmica**                                                                                                      
+      [Nome da Instituição]                                                                                                         
+DEBUG ------------------------------------------ Google Response Stream End ------------------------------------------              
+DEBUG Added RunOutput to Team Session                                                                                               
+DEBUG ****************************** Team Run End: c1870d9f-c664-47a6-9195-4597e1b38a2d ******************************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Onde pego o comprovante de matrícula para o estágio?                                                                             ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Secretaria Acadêmica Response ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Prezado(a) aluno(a),                                                                                                             ┃
+┃                                                                                                                                  ┃
+┃ Para obter o seu comprovante de matrícula destinado a fins de estágio, informamos que este procedimento pode ser realizado de    ┃
+┃ forma autônoma através do nosso sistema acadêmico online.                                                                        ┃
+┃                                                                                                                                  ┃
+┃ Siga as orientações abaixo:                                                                                                      ┃
+┃                                                                                                                                  ┃
+┃  1 Acesse o Portal do Aluno: Utilize o seu login e senha institucional no endereço eletrônico oficial da secretaria acadêmica.   ┃
+┃  2 Localize a aba "Serviços" ou "Documentos": No menu principal, procure pela opção correspondente a documentos ou declarações.  ┃
+┃  3 Selecione "Declaração de Matrícula": O sistema gerará automaticamente um arquivo em formato PDF contendo as informações       ┃
+┃    necessárias, incluindo a carga horária e a regularidade do semestre letivo vigente.                                           ┃
+┃  4 Autenticidade: Ressaltamos que o documento gerado pelo sistema possui um código de autenticidade (QR Code ou código           ┃
+┃    alfanumérico) que garante a sua validade jurídica perante a empresa concedente do estágio.                                    ┃
+┃                                                                                                                                  ┃
+┃ Observações importantes:                                                                                                         ┃
+┃                                                                                                                                  ┃
+┃  • Validação: Caso a empresa exija a assinatura manual ou o carimbo da Secretaria Acadêmica, após gerar o documento online, você ┃
+┃    deverá comparecer presencialmente ao nosso setor, no horário de atendimento das [inserir horário], para que possamos proceder ┃
+┃    com a devida validação física.                                                                                                ┃
+┃  • Dados Cadastrais: Certifique-se de que seus dados pessoais e o semestre letivo estejam corretos antes de imprimir o           ┃
+┃    documento. Caso haja qualquer divergência, entre em contato com esta secretaria para a devida atualização.                    ┃
+┃                                                                                                                                  ┃
+┃ Caso encontre dificuldades técnicas para acessar o portal ou emitir o documento, solicitamos que nos envie um e-mail para        ┃
+┃ [inserir endereço de e-mail] contendo o seu nome completo e número de matrícula para que possamos auxiliá-lo.                    ┃
+┃                                                                                                                                  ┃
+┃ Atenciosamente,                                                                                                                  ┃
+┃                                                                                                                                  ┃
+┃ Secretaria Acadêmica [Nome da Instituição]                                                                                       ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Team Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ • delegate_task_to_member(member_id=secretaria-acadêmica, task=O aluno deseja saber como obter o comprovante                     ┃
+┃   de matrícula para fins de estágio. Por favor, forneça as orientações necessárias para essa solicitação.)                       ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (5.4s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Prezado(a) aluno(a),                                                                                                             ┃
+┃                                                                                                                                  ┃
+┃ Para obter o seu comprovante de matrícula destinado a fins de estágio, informamos que este procedimento pode ser realizado de    ┃
+┃ forma autônoma através do nosso sistema acadêmico online.                                                                        ┃
+┃                                                                                                                                  ┃
+┃ Siga as orientações abaixo:                                                                                                      ┃
+┃                                                                                                                                  ┃
+┃  1 Acesse o Portal do Aluno: Utilize o seu login e senha institucional no endereço eletrônico oficial da secretaria acadêmica.   ┃
+┃  2 Localize a aba "Serviços" ou "Documentos": No menu principal, procure pela opção correspondente a documentos ou declarações.  ┃
+┃  3 Selecione "Declaração de Matrícula": O sistema gerará automaticamente um arquivo em formato PDF contendo as informações       ┃
+┃    necessárias, incluindo a carga horária e a regularidade do semestre letivo vigente.                                           ┃
+┃  4 Autenticidade: Ressaltamos que o documento gerado pelo sistema possui um código de autenticidade (QR Code ou código           ┃
+┃    alfanumérico) que garante a sua validade jurídica perante a empresa concedente do estágio.                                    ┃
+┃                                                                                                                                  ┃
+┃ Observações importantes:                                                                                                         ┃
+┃                                                                                                                                  ┃
+┃  • Validação: Caso a empresa exija a assinatura manual ou o carimbo da Secretaria Acadêmica, após gerar o documento online, você ┃
+┃    deverá comparecer presencialmente ao nosso setor, no horário de atendimento das [inserir horário], para que possamos proceder ┃
+┃    com a devida validação física.                                                                                                ┃
+┃  • Dados Cadastrais: Certifique-se de que seus dados pessoais e o semestre letivo estejam corretos antes de imprimir o           ┃
+┃    documento. Caso haja qualquer divergência, entre em contato com esta secretaria para a devida atualização.                    ┃
+┃                                                                                                                                  ┃
+┃ Caso encontre dificuldades técnicas para acessar o portal ou emitir o documento, solicitamos que nos envie um e-mail para        ┃
+┃ [inserir endereço de e-mail] contendo o seu nome completo e número de matrícula para que possamos auxiliá-lo.                    ┃
+┃                                                                                                                                  ┃
+┃ Atenciosamente,                                                                                                                  ┃
+┃                                                                                                                                  ┃
+┃ Secretaria Acadêmica [Nome da Instituição]                                                                                       ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+--------------------------------------------------
+👤 Aluno: E se eu esquecer o meu login na hora de baixar?
+
+🤖 Processando...
+
+DEBUG ************************************ Team ID: bot-de-suporte-institucional *************************************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History will not be added to the context.   
+DEBUG ******************************* Session ID: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e *******************************              
+DEBUG Creating new TeamSession: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e                                                                
+DEBUG ***************************** Team Run Start: 31e714b6-f693-4f3a-976b-cf44b9e5bb41 *****************************              
+DEBUG Processing tools for model                                                                                                    
+DEBUG Added tool delegate_task_to_member                                                                                            
+DEBUG ----------------------------------------- Google Response Stream Start -----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite -----------------------------------------              
+DEBUG ==================================================== system ====================================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to members when their expertise or     
+      tools are needed. For straightforward requests you can handle directly — including using your own tools — respond without     
+      delegating.                                                                                                                   
+                                                                                                                                    
+      <team_members>                                                                                                                
+      <member id="equipe-de-ti" name="Equipe de TI">                                                                                
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                            
+      </member>                                                                                                                     
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                                                                
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                      
+      </member>                                                                                                                     
+      </team_members>                                                                                                               
+                                                                                                                                    
+      <how_to_respond>                                                                                                              
+      You operate in route mode. For requests that need member expertise, identify the single best member and delegate to them —    
+      their response is returned directly to the user. For requests you can handle directly — simple questions, using your own      
+      tools, or general conversation — respond without delegating.                                                                  
+                                                                                                                                    
+      When routing to a member:                                                                                                     
+      - Analyze the request to determine which member's role and tools are the best match.                                          
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team ID.                               
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow the request.                    
+      - If no member is a clear fit, choose the closest match and include any additional context the member might need.             
+      </how_to_respond>                                                                                                             
+                                                                                                                                    
+      - Você é o roteador de triagem da universidade.                                                                               
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.                                   
+      - Regras:                                                                                                                     
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                                                       
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                                                               
+      - NUNCA responda diretamente. Apenas delegue.                                                                                 
+      <additional_information>                                                                                                      
+      - Use markdown to format your answers.                                                                                        
+      </additional_information>                                                                                                     
+DEBUG ===================================================== user =====================================================              
+DEBUG E se eu esquecer o meu login na hora de baixar?                                                                               
+DEBUG ================================================== assistant ===================================================              
+DEBUG Tool Calls:                                                                                                                   
+        - ID: '3ZnDfwAz'                                                                                                            
+          Name: 'delegate_task_to_member'                                                                                           
+          Arguments: 'member_id: equipe-de-ti, task: O usuário esqueceu o login para realizar o download de arquivos ou sistemas e  
+      precisa de assistência para recuperar o acesso.'                                                                              
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG * Tokens:                      input=589, output=55, total=644                                                                
+DEBUG * Duration:                    0.7214s                                                                                        
+DEBUG * Tokens per second:           76.2376 tokens/s                                                                               
+DEBUG * Time to first token:         0.7113s                                                                                        
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)                                                            
+DEBUG ******************************* Session ID: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e *******************************              
+DEBUG ******************************************** Agent ID: equipe-de-ti ********************************************              
+DEBUG Creating new AgentSession: aff9bc8e-997e-4519-a3ce-9c77d6ce3b0e                                                               
+DEBUG **************************** Agent Run Start: 157cd723-354a-4863-adba-4afd9a33a737 *****************************              
+DEBUG ----------------------------------------- Google Response Stream Start -----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite -----------------------------------------              
+DEBUG ==================================================== system ====================================================              
+DEBUG <your_role>                                                                                                                   
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                                    
+      </your_role>                                                                                                                  
+                                                                                                                                    
+      - Você é o técnico de Suporte de TI da universidade.                                                                          
+      - Forneça passos lógicos e formatados em markdown para resolver falhas tecnológicas.                                          
+DEBUG ===================================================== user =====================================================              
+DEBUG O usuário esqueceu o login para realizar o download de arquivos ou sistemas e precisa de assistência para recuperar o acesso. 
+DEBUG ================================================== assistant ===================================================              
+DEBUG Olá. Compreendo a urgência em recuperar o acesso aos sistemas da universidade. Para garantir a segurança dos seus dados e     
+      restabelecer seu login, siga os passos abaixo:                                                                                
+                                                                                                                                    
+      ### Passo 1: Verificação de Identidade                                                                                        
+      Para que possamos resetar sua senha ou recuperar seu usuário, precisamos confirmar que você é o titular da conta.             
+      1. Tenha em mãos o seu **Número de Matrícula** ou **Código de Identificação Institucional**.                                  
+      2. Certifique-se de que você tem acesso ao **e-mail pessoal cadastrado** no ato da sua matrícula ou contratação (é para lá que
+      as instruções de segurança serão enviadas).                                                                                   
+                                                                                                                                    
+      ### Passo 2: Tentativa de Recuperação Automatizada                                                                            
+      Antes de abrir um chamado, tente o procedimento de autoatendimento:                                                           
+      1. Acesse a página de login do sistema desejado (ex: Portal do Aluno, Portal do Professor ou Intranet).                       
+      2. Clique no link **"Esqueci meu usuário/senha"** ou **"Recuperar acesso"**.                                                  
+      3. Insira o seu CPF ou e-mail institucional.                                                                                  
+      4. Verifique sua caixa de entrada (incluindo a pasta de **Spam/Lixo Eletrônico**) para localizar o código de verificação ou   
+      link de redefinição.                                                                                                          
+                                                                                                                                    
+      ### Passo 3: Solicitação ao Suporte de TI (Caso o erro persista)                                                              
+      Se o sistema não reconhecer seus dados ou você não tiver mais acesso ao e-mail cadastrado, siga este procedimento:            
+                                                                                                                                    
+      1. **Abertura de Chamado:** Envie um e-mail para `suporte.ti@universidade.edu.br` com o assunto: **"Solicitação de Recuperação
+      de Login - [Seu Nome Completo]"**.                                                                                            
+      2. **Corpo do E-mail:** Inclua as seguintes informações:                                                                      
+         * **Nome completo:**                                                                                                       
+         * **Número de matrícula:**                                                                                                 
+         * **Descrição breve do problema:** (Ex: "Não recebo o e-mail de recuperação" ou "Sistema informa usuário inexistente").    
+         * **Anexo:** Uma foto ou cópia digitalizada do seu **documento de identidade oficial com foto** (necessário para validação 
+      de segurança).                                                                                                                
+                                                                                                                                    
+      ### Passo 4: Orientações de Segurança                                                                                         
+      * **Nunca** forneça sua senha atual para ninguém, nem mesmo para a equipe de TI. Nós nunca solicitaremos sua senha via e-mail 
+      ou telefone.                                                                                                                  
+      * Após receber sua nova credencial, certifique-se de configurar um e-mail de recuperação atualizado ou um número de celular   
+      para autenticação de dois fatores (2FA), se disponível.                                                                       
+                                                                                                                                    
+      ---                                                                                                                           
+                                                                                                                                    
+      **Dica técnica:** Se você estiver tentando acessar os sistemas de fora do campus (home office ou rede externa), certifique-se 
+      de que sua conexão com a **VPN da universidade** esteja ativa, caso o sistema exija acesso via rede interna.                  
+                                                                                                                                    
+      Caso precise de assistência imediata, nosso ramal de atendimento é **(XX) XXXX-XXXX**, disponível de segunda a sexta, das 08h 
+      às 18h.                                                                                                                       
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG * Tokens:                      input=87, output=651, total=738                                                                
+DEBUG * Duration:                    3.3254s                                                                                        
+DEBUG * Tokens per second:           195.7687 tokens/s                                                                              
+DEBUG * Time to first token:         0.9376s                                                                                        
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG ------------------------------------------ Google Response Stream End ------------------------------------------              
+DEBUG Added RunOutput to Agent Session                                                                                              
+DEBUG ***************************** Agent Run End: 157cd723-354a-4863-adba-4afd9a33a737 ******************************              
+DEBUG Updated team run context with member name: Equipe de TI                                                                       
+DEBUG Added RunOutput to Team Session                                                                                               
+DEBUG ===================================================== tool =====================================================              
+DEBUG Tool call Id: 3ZnDfwAz                                                                                                        
+DEBUG Olá. Compreendo a urgência em recuperar o acesso aos sistemas da universidade. Para garantir a segurança dos seus dados e     
+      restabelecer seu login, siga os passos abaixo:                                                                                
+                                                                                                                                    
+      ### Passo 1: Verificação de Identidade                                                                                        
+      Para que possamos resetar sua senha ou recuperar seu usuário, precisamos confirmar que você é o titular da conta.             
+      1. Tenha em mãos o seu **Número de Matrícula** ou **Código de Identificação Institucional**.                                  
+      2. Certifique-se de que você tem acesso ao **e-mail pessoal cadastrado** no ato da sua matrícula ou contratação (é para lá que
+      as instruções de segurança serão enviadas).                                                                                   
+                                                                                                                                    
+      ### Passo 2: Tentativa de Recuperação Automatizada                                                                            
+      Antes de abrir um chamado, tente o procedimento de autoatendimento:                                                           
+      1. Acesse a página de login do sistema desejado (ex: Portal do Aluno, Portal do Professor ou Intranet).                       
+      2. Clique no link **"Esqueci meu usuário/senha"** ou **"Recuperar acesso"**.                                                  
+      3. Insira o seu CPF ou e-mail institucional.                                                                                  
+      4. Verifique sua caixa de entrada (incluindo a pasta de **Spam/Lixo Eletrônico**) para localizar o código de verificação ou   
+      link de redefinição.                                                                                                          
+                                                                                                                                    
+      ### Passo 3: Solicitação ao Suporte de TI (Caso o erro persista)                                                              
+      Se o sistema não reconhecer seus dados ou você não tiver mais acesso ao e-mail cadastrado, siga este procedimento:            
+                                                                                                                                    
+      1. **Abertura de Chamado:** Envie um e-mail para `suporte.ti@universidade.edu.br` com o assunto: **"Solicitação de Recuperação
+      de Login - [Seu Nome Completo]"**.                                                                                            
+      2. **Corpo do E-mail:** Inclua as seguintes informações:                                                                      
+         * **Nome completo:**                                                                                                       
+         * **Número de matrícula:**                                                                                                 
+         * **Descrição breve do problema:** (Ex: "Não recebo o e-mail de recuperação" ou "Sistema informa usuário inexistente").    
+         * **Anexo:** Uma foto ou cópia digitalizada do seu **documento de identidade oficial com foto** (necessário para validação 
+      de segurança).                                                                                                                
+                                                                                                                                    
+      ### Passo 4: Orientações de Segurança                                                                                         
+      * **Nunca** forneça sua senha atual para ninguém, nem mesmo para a equipe de TI. Nós nunca solicitaremos sua senha via e-mail 
+      ou telefone.                                                                                                                  
+      * Após receber sua nova credencial, certifique-se de configurar um e-mail de recuperação atualizado ou um número de celular   
+      para autenticação de dois fatores (2FA), se disponível.                                                                       
+                                                                                                                                    
+      ---                                                                                                                           
+                                                                                                                                    
+      **Dica técnica:** Se você estiver tentando acessar os sistemas de fora do campus (home office ou rede externa), certifique-se 
+      de que sua conexão com a **VPN da universidade** esteja ativa, caso o sistema exija acesso via rede interna.                  
+                                                                                                                                    
+      Caso precise de assistência imediata, nosso ramal de atendimento é **(XX) XXXX-XXXX**, disponível de segunda a sexta, das 08h 
+      às 18h.                                                                                                                       
+DEBUG ------------------------------------------ Google Response Stream End ------------------------------------------              
+DEBUG Added RunOutput to Team Session                                                                                               
+DEBUG ****************************** Team Run End: 31e714b6-f693-4f3a-976b-cf44b9e5bb41 ******************************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ E se eu esquecer o meu login na hora de baixar?                                                                                  ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Equipe de TI Response ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Olá. Compreendo a urgência em recuperar o acesso aos sistemas da universidade. Para garantir a segurança dos seus dados e        ┃
+┃ restabelecer seu login, siga os passos abaixo:                                                                                   ┃
+┃                                                                                                                                  ┃
+┃ Passo 1: Verificação de Identidade                                                                                               ┃
+┃                                                                                                                                  ┃
+┃ Para que possamos resetar sua senha ou recuperar seu usuário, precisamos confirmar que você é o titular da conta.                ┃
+┃                                                                                                                                  ┃
+┃  1 Tenha em mãos o seu Número de Matrícula ou Código de Identificação Institucional.                                             ┃
+┃  2 Certifique-se de que você tem acesso ao e-mail pessoal cadastrado no ato da sua matrícula ou contratação (é para lá que as    ┃
+┃    instruções de segurança serão enviadas).                                                                                      ┃
+┃                                                                                                                                  ┃
+┃ Passo 2: Tentativa de Recuperação Automatizada                                                                                   ┃
+┃                                                                                                                                  ┃
+┃ Antes de abrir um chamado, tente o procedimento de autoatendimento:                                                              ┃
+┃                                                                                                                                  ┃
+┃  1 Acesse a página de login do sistema desejado (ex: Portal do Aluno, Portal do Professor ou Intranet).                          ┃
+┃  2 Clique no link "Esqueci meu usuário/senha" ou "Recuperar acesso".                                                             ┃
+┃  3 Insira o seu CPF ou e-mail institucional.                                                                                     ┃
+┃  4 Verifique sua caixa de entrada (incluindo a pasta de Spam/Lixo Eletrônico) para localizar o código de verificação ou link de  ┃
+┃    redefinição.                                                                                                                  ┃
+┃                                                                                                                                  ┃
+┃ Passo 3: Solicitação ao Suporte de TI (Caso o erro persista)                                                                     ┃
+┃                                                                                                                                  ┃
+┃ Se o sistema não reconhecer seus dados ou você não tiver mais acesso ao e-mail cadastrado, siga este procedimento:               ┃
+┃                                                                                                                                  ┃
+┃  1 Abertura de Chamado: Envie um e-mail para suporte.ti@universidade.edu.br com o assunto: "Solicitação de Recuperação de Login  ┃
+┃    - [Seu Nome Completo]".                                                                                                       ┃
+┃  2 Corpo do E-mail: Inclua as seguintes informações:                                                                             ┃
+┃     • Nome completo:                                                                                                             ┃
+┃     • Número de matrícula:                                                                                                       ┃
+┃     • Descrição breve do problema: (Ex: "Não recebo o e-mail de recuperação" ou "Sistema informa usuário inexistente").          ┃
+┃     • Anexo: Uma foto ou cópia digitalizada do seu documento de identidade oficial com foto (necessário para validação de        ┃
+┃       segurança).                                                                                                                ┃
+┃                                                                                                                                  ┃
+┃ Passo 4: Orientações de Segurança                                                                                                ┃
+┃                                                                                                                                  ┃
+┃  • Nunca forneça sua senha atual para ninguém, nem mesmo para a equipe de TI. Nós nunca solicitaremos sua senha via e-mail ou    ┃
+┃    telefone.                                                                                                                     ┃
+┃  • Após receber sua nova credencial, certifique-se de configurar um e-mail de recuperação atualizado ou um número de celular     ┃
+┃    para autenticação de dois fatores (2FA), se disponível.                                                                       ┃
+┃                                                                                                                                  ┃
+┃ -------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                  ┃
+┃ Dica técnica: Se você estiver tentando acessar os sistemas de fora do campus (home office ou rede externa), certifique-se de que ┃
+┃ sua conexão com a VPN da universidade esteja ativa, caso o sistema exija acesso via rede interna.                                ┃
+┃                                                                                                                                  ┃
+┃ Caso precise de assistência imediata, nosso ramal de atendimento é (XX) XXXX-XXXX, disponível de segunda a sexta, das 08h às     ┃
+┃ 18h.                                                                                                                             ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Team Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ • delegate_task_to_member(member_id=equipe-de-ti, task=O usuário esqueceu o login para realizar o download de                    ┃
+┃   arquivos ou sistemas e precisa de assistência para recuperar o acesso.)                                                        ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (5.8s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Olá. Compreendo a urgência em recuperar o acesso aos sistemas da universidade. Para garantir a segurança dos seus dados e        ┃
+┃ restabelecer seu login, siga os passos abaixo:                                                                                   ┃
+┃                                                                                                                                  ┃
+┃ Passo 1: Verificação de Identidade                                                                                               ┃
+┃                                                                                                                                  ┃
+┃ Para que possamos resetar sua senha ou recuperar seu usuário, precisamos confirmar que você é o titular da conta.                ┃
+┃                                                                                                                                  ┃
+┃  1 Tenha em mãos o seu Número de Matrícula ou Código de Identificação Institucional.                                             ┃
+┃  2 Certifique-se de que você tem acesso ao e-mail pessoal cadastrado no ato da sua matrícula ou contratação (é para lá que as    ┃
+┃    instruções de segurança serão enviadas).                                                                                      ┃
+┃                                                                                                                                  ┃
+┃ Passo 2: Tentativa de Recuperação Automatizada                                                                                   ┃
+┃                                                                                                                                  ┃
+┃ Antes de abrir um chamado, tente o procedimento de autoatendimento:                                                              ┃
+┃                                                                                                                                  ┃
+┃  1 Acesse a página de login do sistema desejado (ex: Portal do Aluno, Portal do Professor ou Intranet).                          ┃
+┃  2 Clique no link "Esqueci meu usuário/senha" ou "Recuperar acesso".                                                             ┃
+┃  3 Insira o seu CPF ou e-mail institucional.                                                                                     ┃
+┃  4 Verifique sua caixa de entrada (incluindo a pasta de Spam/Lixo Eletrônico) para localizar o código de verificação ou link de  ┃
+┃    redefinição.                                                                                                                  ┃
+┃                                                                                                                                  ┃
+┃ Passo 3: Solicitação ao Suporte de TI (Caso o erro persista)                                                                     ┃
+┃                                                                                                                                  ┃
+┃ Se o sistema não reconhecer seus dados ou você não tiver mais acesso ao e-mail cadastrado, siga este procedimento:               ┃
+┃                                                                                                                                  ┃
+┃  1 Abertura de Chamado: Envie um e-mail para suporte.ti@universidade.edu.br com o assunto: "Solicitação de Recuperação de Login  ┃
+┃    - [Seu Nome Completo]".                                                                                                       ┃
+┃  2 Corpo do E-mail: Inclua as seguintes informações:                                                                             ┃
+┃     • Nome completo:                                                                                                             ┃
+┃     • Número de matrícula:                                                                                                       ┃
+┃     • Descrição breve do problema: (Ex: "Não recebo o e-mail de recuperação" ou "Sistema informa usuário inexistente").          ┃
+┃     • Anexo: Uma foto ou cópia digitalizada do seu documento de identidade oficial com foto (necessário para validação de        ┃
+┃       segurança).                                                                                                                ┃
+┃                                                                                                                                  ┃
+┃ Passo 4: Orientações de Segurança                                                                                                ┃
+┃                                                                                                                                  ┃
+┃  • Nunca forneça sua senha atual para ninguém, nem mesmo para a equipe de TI. Nós nunca solicitaremos sua senha via e-mail ou    ┃
+┃    telefone.                                                                                                                     ┃
+┃  • Após receber sua nova credencial, certifique-se de configurar um e-mail de recuperação atualizado ou um número de celular     ┃
+┃    para autenticação de dois fatores (2FA), se disponível.                                                                       ┃
+┃                                                                                                                                  ┃
+┃ -------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                  ┃
+┃ Dica técnica: Se você estiver tentando acessar os sistemas de fora do campus (home office ou rede externa), certifique-se de que ┃
+┃ sua conexão com a VPN da universidade esteja ativa, caso o sistema exija acesso via rede interna.                                ┃
+┃                                                                                                                                  ┃
+┃ Caso precise de assistência imediata, nosso ramal de atendimento é (XX) XXXX-XXXX, disponível de segunda a sexta, das 08h às     ┃
+┃ 18h.                                                                                                                             ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+--------------------------------------------------

@@ -1,0 +1,82 @@
+PS C:\Users\breno\OneDrive\Área de Trabalho\projeto_ia_roteamento> python bot.py
+
+==================================================
+🎓 SISTEMA DE TRIAGEM INSTITUCIONAL INICIADO 🎓
+Digite 'sair' para encerrar.
+==================================================
+
+👤 Aluno: Olá, boa tarde! Gostaria de ajuda.
+
+🤖 Processando...
+
+DEBUG ************************************ Team ID: bot-de-suporte-institucional *************************************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History will not be added to the context.   
+DEBUG ******************************* Session ID: f9d832da-61ad-4213-bfad-8587fb28a0ba *******************************              
+DEBUG Creating new TeamSession: f9d832da-61ad-4213-bfad-8587fb28a0ba                                                                
+DEBUG ***************************** Team Run Start: 9b227926-4c9c-4d7f-809c-8293da28f923 *****************************              
+DEBUG Processing tools for model                                                                                                    
+DEBUG Added tool delegate_task_to_member                                                                                            
+DEBUG ----------------------------------------- Google Response Stream Start -----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite -----------------------------------------              
+DEBUG ==================================================== system ====================================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to members when their expertise or     
+      tools are needed. For straightforward requests you can handle directly — including using your own tools — respond without     
+      delegating.                                                                                                                   
+                                                                                                                                    
+      <team_members>                                                                                                                
+      <member id="equipe-de-ti" name="Equipe de TI">                                                                                
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                            
+      </member>                                                                                                                     
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                                                                
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                      
+      </member>                                                                                                                     
+      </team_members>                                                                                                               
+                                                                                                                                    
+      <how_to_respond>                                                                                                              
+      You operate in route mode. For requests that need member expertise, identify the single best member and delegate to them —    
+      their response is returned directly to the user. For requests you can handle directly — simple questions, using your own      
+      tools, or general conversation — respond without delegating.                                                                  
+                                                                                                                                    
+      When routing to a member:                                                                                                     
+      - Analyze the request to determine which member's role and tools are the best match.                                          
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team ID.                               
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow the request.                    
+      - If no member is a clear fit, choose the closest match and include any additional context the member might need.             
+      </how_to_respond>                                                                                                             
+                                                                                                                                    
+      - Você é o roteador de triagem da universidade.                                                                               
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.                                   
+      - Regras:                                                                                                                     
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                                                       
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                                                               
+      - NUNCA responda diretamente. Apenas delegue.                                                                                 
+      <additional_information>                                                                                                      
+      - Use markdown to format your answers.                                                                                        
+      </additional_information>                                                                                                     
+DEBUG ===================================================== user =====================================================              
+DEBUG Olá, boa tarde! Gostaria de ajuda.                                                                                            
+DEBUG ================================================== assistant ===================================================              
+DEBUG Boa tarde! Para que eu possa encaminhar você para a equipe correta, você poderia por favor informar se sua dúvida é           
+      relacionada a algum problema de acesso/sistema ou se é sobre assuntos administrativos (como documentos, matrícula ou          
+      histórico)?                                                                                                                   
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG * Tokens:                      input=586, output=47, total=633                                                                
+DEBUG * Duration:                    1.3731s                                                                                        
+DEBUG * Tokens per second:           34.2299 tokens/s                                                                               
+DEBUG * Time to first token:         1.0637s                                                                                        
+DEBUG **************************************************  METRICS  ***************************************************              
+DEBUG ------------------------------------------ Google Response Stream End ------------------------------------------              
+DEBUG Added RunOutput to Team Session                                                                                               
+DEBUG ****************************** Team Run End: 9b227926-4c9c-4d7f-809c-8293da28f923 ******************************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Olá, boa tarde! Gostaria de ajuda.                                                                                               ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (2.3s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                  ┃
+┃ Boa tarde! Para que eu possa encaminhar você para a equipe correta, você poderia por favor informar se sua dúvida é relacionada  ┃
+┃ a algum problema de acesso/sistema ou se é sobre assuntos administrativos (como documentos, matrícula ou histórico)?             ┃
+┃                                                                                                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+--------------------------------------------------

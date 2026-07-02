@@ -1,0 +1,262 @@
+# MVP — projeto_ia_roteamento.py
+# Caso ID: 07
+# Prompt: "Estou tentando enviar meu TCC pelo sistema, mas dá erro 500."
+# Destino esperado: TI
+# Executado em: 2026-06-19 20:10:45
+#===========================================================
+
+--- Execução caso 07 ---
+session_id: 8f77825d-3f17-4de6-aa81-6ff0f52089a4
+active_sector: (nenhum)
+prompt: Estou tentando enviar meu TCC pelo sistema, mas dá erro 500.
+
+DEBUG ********** Team ID: bot-de-suporte-institucional ***********              
+DEBUG ***** Session ID: 8f77825d-3f17-4de6-aa81-6ff0f52089a4 *****              
+DEBUG Creating new TeamSession: 8f77825d-3f17-4de6-aa81-6ff0f52089a4            
+DEBUG *** Team Run Start: 5cc00459-66af-487b-91db-3bfb736780b1 ***              
+DEBUG Processing tools for model                                                
+DEBUG Added tool delegate_task_to_member                                        
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's      
+      request. Delegate to members when their expertise or tools are needed. For
+      straightforward requests you can handle directly — including using your   
+      own tools — respond without delegating.                                   
+                                                                                
+      <team_members>                                                            
+      <member id="equipe-de-ti" name="Equipe de TI">                            
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas,        
+      infraestrutura)                                                           
+      </member>                                                                 
+      <member id="secretaria-academica" name="Secretaria Acadêmica">            
+        Role: Resolve questões administrativas (matrícula, documentos,          
+      trancamento, histórico escolar)                                           
+      </member>                                                                 
+      </team_members>                                                           
+                                                                                
+      <how_to_respond>                                                          
+      You operate in route mode. For requests that need member expertise,       
+      identify the single best member and delegate to them — their response is  
+      returned directly to the user. For requests you can handle directly —     
+      simple questions, using your own tools, or general conversation — respond 
+      without delegating.                                                       
+                                                                                
+      When routing to a member:                                                 
+      - Analyze the request to determine which member's role and tools are the  
+      best match.                                                               
+      - Delegate to exactly one member. Use only the member's ID — do not prefix
+      it with the team ID.                                                      
+      - Write the task to faithfully represent the user's full intent. Do not   
+      reinterpret or narrow the request.                                        
+      - If no member is a clear fit, choose the closest match and include any   
+      additional context the member might need.                                 
+      </how_to_respond>                                                         
+                                                                                
+      - Você é o roteador inteligente do Portal de Atendimento do IFES.         
+      - Sua função principal é delegar para UM membro especialista. Nunca       
+      misture os setores.                                                       
+      -                                                                         
+      - Secretaria Acadêmica (secretaria-academica):                            
+      - - matrícula, cancelamento, trancamento, documentos, diploma, certificado
+      - - histórico ESCOLAR (documento acadêmico), declarações, requerimentos,  
+      protocolo                                                                 
+      - - correção de dados cadastrais (nome errado no portal)                  
+      -                                                                         
+      - Equipe de TI (equipe-de-ti):                                            
+      - - senhas, login, e-mail institucional, VPN, Wi-Fi, portal inacessível   
+      - - erros técnicos, site fora do ar, Q-Acadêmico com falha, sistemas e    
+      infraestrutura                                                            
+      -                                                                         
+      - IMPORTANTE:                                                             
+      - - 'histórico escolar' ou 'solicitar histórico' = documento da           
+      Secretaria, NUNCA TI.                                                     
+      - - Se a mensagem menciona documento E problema técnico (ex: diploma +    
+      site fora do ar), priorize TI.                                            
+      - - Se o aluno mudar de assunto na mesma conversa, delegue para o setor da
+      NOVA pergunta.                                                            
+      - - Se a NOVA mensagem mencionar login, senha ou erro técnico, mesmo após 
+      assunto administrativo, delegue para TI.                                  
+      - - Em continuações do MESMO assunto (ex: 'agora vou onde?'), delegue ao  
+      setor que estava tratando aquele tema.                                    
+      - - Se a intenção for vaga (ex: 'preciso de ajuda'), pergunte se é TI ou  
+      Secretaria ANTES de delegar.                                              
+      -                                                                         
+      - Exemplos:                                                               
+      - - 'Preciso solicitar meu histórico escolar' -> secretaria-academica     
+      - - 'Esqueci minha senha do portal' -> equipe-de-ti                       
+      - - 'Preciso do diploma, mas o site está fora do ar' -> equipe-de-ti      
+      - - 'Meu nome está errado no portal' -> secretaria-academica              
+      - - 'Olá, gostaria de ajuda' -> pergunte TI ou Secretaria (não delegue    
+      ainda)                                                                    
+      <additional_information>                                                  
+      - Use markdown to format your answers.                                    
+      </additional_information>                                                 
+DEBUG =========================== user ===========================              
+DEBUG ATENÇÃO: a nova mensagem contém termos técnicos (login, senha, acesso,    
+      erro). Avalie se o setor mudou para a Equipe de TI.                       
+                                                                                
+      Use o histórico abaixo apenas como contexto. Responda somente à NOVA      
+      mensagem do aluno — o assunto pode ter mudado de setor.                   
+                                                                                
+      Sistema: Olá! Bem-vindo ao **Portal de Atendimento Institucional do       
+      IFES**.                                                                   
+                                                                                
+      Nossa IA faz a triagem automática e encaminha sua solicitação para o setor
+      correto:                                                                  
+                                                                                
+      🖥️ **TI** — senhas, sistemas, acesso, e-mail                              
+      📋 **Secretaria** — matrícula, documentos, trancamentos, histórico        
+                                                                                
+      Como posso ajudá-lo hoje?                                                 
+                                                                                
+      Nova mensagem do aluno: Estou tentando enviar meu TCC pelo sistema, mas dá
+      erro 500.                                                                 
+DEBUG ======================== assistant =========================              
+DEBUG Tool Calls:                                                               
+        - ID: 'NMpIFJPc'                                                        
+          Name: 'delegate_task_to_member'                                       
+          Arguments: 'member_id: equipe-de-ti, task: O aluno relatou que está   
+      tentando enviar o TCC pelo sistema, mas está ocorrendo um "erro 500". Por 
+      favor, verifique o problema técnico.'                                     
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=1098, output=67, total=1165          
+DEBUG * Duration:                    0.9032s                                    
+DEBUG * Tokens per second:           74.1845 tokens/s                           
+DEBUG ************************  METRICS  *************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)        
+DEBUG Adding messages from history for Equipe de TI                             
+DEBUG Member IDs to filter by were provided. The skip_member_messages flag will 
+      be ignored.                                                               
+DEBUG ***** Session ID: 8f77825d-3f17-4de6-aa81-6ff0f52089a4 *****              
+DEBUG ****************** Agent ID: equipe-de-ti ******************              
+DEBUG Creating new AgentSession: 8f77825d-3f17-4de6-aa81-6ff0f52089a4           
+DEBUG ** Agent Run Start: 194931ef-26f4-4f82-bde8-5cb5fe3726a8 ***              
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG <your_role>                                                               
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)
+      </your_role>                                                              
+                                                                                
+      - Você é o técnico de Suporte de TI do IFES.                              
+      - Atenda APENAS problemas técnicos: senhas, login, e-mail, VPN, Wi-Fi,    
+      erros de sistema.                                                         
+      - NÃO trate de matrícula, documentos, histórico escolar ou trancamento.   
+      - Forneça passos claros e objetivos em markdown.                          
+      - Use listas numeradas quando possível.                                   
+DEBUG =========================== user ===========================              
+DEBUG O aluno relatou que está tentando enviar o TCC pelo sistema, mas está     
+      ocorrendo um "erro 500". Por favor, verifique o problema técnico.         
+DEBUG ======================== assistant =========================              
+DEBUG Olá. Sou o suporte técnico de TI do IFES.                                 
+                                                                                
+      O "Erro 500" (Internal Server Error) indica que o servidor do sistema está
+      enfrentando uma falha momentânea ao processar a requisição. Como se trata 
+      de um problema no ambiente do servidor e não na máquina do usuário, siga  
+      estes passos para tentarmos normalizar a situação:                        
+                                                                                
+      1. **Limpeza de Cache:** O navegador pode estar com arquivos temporários  
+      corrompidos que conflitam com o servidor.                                 
+         - Pressione `Ctrl + Shift + Del` no seu teclado.                       
+         - Selecione "Imagens e arquivos armazenados em cache" e "Cookies".     
+         - Limpe os dados, feche o navegador e abra novamente.                  
+                                                                                
+      2. **Teste em Navegador Diferente:** Tente realizar o envio utilizando uma
+      janela anônima (no Chrome/Edge: `Ctrl + Shift + N`) ou um navegador       
+      diferente (como Firefox).                                                 
+                                                                                
+      3. **Verificação de Arquivo:**                                            
+         - Certifique-se de que o arquivo do TCC não excede o limite de tamanho 
+      permitido pelo sistema (geralmente arquivos muito grandes podem causar    
+      timeout no servidor).                                                     
+         - Verifique se o nome do arquivo não possui caracteres especiais (como 
+      `ç`, `~`, `^`, `@`). Renomeie para algo simples, como                     
+      `TCC_NomeDoAluno.pdf`.                                                    
+                                                                                
+      4. **Tentativa em Horário Alternativo:** Se o sistema estiver com muitos  
+      acessos simultâneos, o servidor pode sobrecarregar. Tente realizar o envio
+      em um horário de menor fluxo.                                             
+                                                                                
+      **Importante:**                                                           
+      Se após esses passos o erro persistir, o problema é sistêmico (no banco de
+      dados ou no servidor de aplicação). Nesse caso, envie um e-mail para a    
+      **Coordenadoria de Tecnologia da Informação (CTI)** do seu campus         
+      contendo:                                                                 
+      *   Nome completo e matrícula;                                            
+      *   Nome do sistema que está acessando;                                   
+      *   Print (captura de tela) do erro 500;                                  
+      *   Data e hora da tentativa.                                             
+                                                                                
+      *Lembre-se: Não tratamos de prazos de entrega ou questões acadêmicas. Caso
+      o problema técnico impeça a entrega no prazo, entre em contato com a sua  
+      coordenação de curso para formalizar a intercorrência.*                   
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=146, output=487, total=633           
+DEBUG * Duration:                    2.3398s                                    
+DEBUG * Tokens per second:           208.1365 tokens/s                          
+DEBUG * Time to first token:         2.3398s                                    
+DEBUG ************************  METRICS  *************************              
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Agent Session                                          
+DEBUG Table agno_approvals does not exist                                       
+DEBUG *** Agent Run End: 194931ef-26f4-4f82-bde8-5cb5fe3726a8 ****              
+DEBUG Updated team run context with member name: Equipe de TI                   
+DEBUG Added RunOutput to Team Session                                           
+DEBUG =========================== tool ===========================              
+DEBUG Tool call Id: NMpIFJPc                                                    
+DEBUG Olá. Sou o suporte técnico de TI do IFES.                                 
+                                                                                
+      O "Erro 500" (Internal Server Error) indica que o servidor do sistema está
+      enfrentando uma falha momentânea ao processar a requisição. Como se trata 
+      de um problema no ambiente do servidor e não na máquina do usuário, siga  
+      estes passos para tentarmos normalizar a situação:                        
+                                                                                
+      1. **Limpeza de Cache:** O navegador pode estar com arquivos temporários  
+      corrompidos que conflitam com o servidor.                                 
+         - Pressione `Ctrl + Shift + Del` no seu teclado.                       
+         - Selecione "Imagens e arquivos armazenados em cache" e "Cookies".     
+         - Limpe os dados, feche o navegador e abra novamente.                  
+                                                                                
+      2. **Teste em Navegador Diferente:** Tente realizar o envio utilizando uma
+      janela anônima (no Chrome/Edge: `Ctrl + Shift + N`) ou um navegador       
+      diferente (como Firefox).                                                 
+                                                                                
+      3. **Verificação de Arquivo:**                                            
+         - Certifique-se de que o arquivo do TCC não excede o limite de tamanho 
+      permitido pelo sistema (geralmente arquivos muito grandes podem causar    
+      timeout no servidor).                                                     
+         - Verifique se o nome do arquivo não possui caracteres especiais (como 
+      `ç`, `~`, `^`, `@`). Renomeie para algo simples, como                     
+      `TCC_NomeDoAluno.pdf`.                                                    
+                                                                                
+      4. **Tentativa em Horário Alternativo:** Se o sistema estiver com muitos  
+      acessos simultâneos, o servidor pode sobrecarregar. Tente realizar o envio
+      em um horário de menor fluxo.                                             
+                                                                                
+      **Importante:**                                                           
+      Se após esses passos o erro persistir, o problema é sistêmico (no banco de
+      dados ou no servidor de aplicação). Nesse caso, envie um e-mail para a    
+      **Coordenadoria de Tecnologia da Informação (CTI)** do seu campus         
+      contendo:                                                                 
+      *   Nome completo e matrícula;                                            
+      *   Nome do sistema que está acessando;                                   
+      *   Print (captura de tela) do erro 500;                                  
+      *   Data e hora da tentativa.                                             
+                                                                                
+      *Lembre-se: Não tratamos de prazos de entrega ou questões acadêmicas. Caso
+      o problema técnico impeça a entrega no prazo, entre em contato com a sua  
+      coordenação de curso para formalizar a intercorrência.*                   
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Team Session                                           
+DEBUG Created or updated TeamSession record:                                    
+      8f77825d-3f17-4de6-aa81-6ff0f52089a4                                      
+DEBUG Table agno_approvals does not exist                                       
+DEBUG **** Team Run End: 5cc00459-66af-487b-91db-3bfb736780b1 ****              
+
+--- Resultado ---
+badge: 🖥️ Equipe de TI
+sector: ti
+resposta (início): Olá. Sou o suporte técnico de TI do IFES.
+
+O "Erro 500" (Internal Server Error) indica que o servidor do sistema está enfrentando uma falha momentânea ao processar a requisição. Como se trata de um problema no ambiente do servidor e não na máquina do usuário, siga estes passos para tentarmos normali...

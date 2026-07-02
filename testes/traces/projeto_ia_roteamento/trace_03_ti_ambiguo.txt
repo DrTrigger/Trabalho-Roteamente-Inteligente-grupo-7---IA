@@ -1,0 +1,228 @@
+# MVP — projeto_ia_roteamento.py
+# Caso ID: 03
+# Prompt: "Preciso do diploma, mas o site de emissão está fora do ar."
+# Destino esperado: TI
+# Executado em: 2026-06-19 20:10:01
+#===========================================================
+
+--- Execução caso 03 ---
+session_id: 434efe15-4272-4020-89e2-2bc2a40f4035
+active_sector: (nenhum)
+prompt: Preciso do diploma, mas o site de emissão está fora do ar.
+
+DEBUG ********** Team ID: bot-de-suporte-institucional ***********              
+DEBUG ***** Session ID: 434efe15-4272-4020-89e2-2bc2a40f4035 *****              
+DEBUG Creating new TeamSession: 434efe15-4272-4020-89e2-2bc2a40f4035            
+DEBUG *** Team Run Start: f7cc60e2-2849-4f43-bee6-c9cb7be83200 ***              
+DEBUG Processing tools for model                                                
+DEBUG Added tool delegate_task_to_member                                        
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's      
+      request. Delegate to members when their expertise or tools are needed. For
+      straightforward requests you can handle directly — including using your   
+      own tools — respond without delegating.                                   
+                                                                                
+      <team_members>                                                            
+      <member id="equipe-de-ti" name="Equipe de TI">                            
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas,        
+      infraestrutura)                                                           
+      </member>                                                                 
+      <member id="secretaria-academica" name="Secretaria Acadêmica">            
+        Role: Resolve questões administrativas (matrícula, documentos,          
+      trancamento, histórico escolar)                                           
+      </member>                                                                 
+      </team_members>                                                           
+                                                                                
+      <how_to_respond>                                                          
+      You operate in route mode. For requests that need member expertise,       
+      identify the single best member and delegate to them — their response is  
+      returned directly to the user. For requests you can handle directly —     
+      simple questions, using your own tools, or general conversation — respond 
+      without delegating.                                                       
+                                                                                
+      When routing to a member:                                                 
+      - Analyze the request to determine which member's role and tools are the  
+      best match.                                                               
+      - Delegate to exactly one member. Use only the member's ID — do not prefix
+      it with the team ID.                                                      
+      - Write the task to faithfully represent the user's full intent. Do not   
+      reinterpret or narrow the request.                                        
+      - If no member is a clear fit, choose the closest match and include any   
+      additional context the member might need.                                 
+      </how_to_respond>                                                         
+                                                                                
+      - Você é o roteador inteligente do Portal de Atendimento do IFES.         
+      - Sua função principal é delegar para UM membro especialista. Nunca       
+      misture os setores.                                                       
+      -                                                                         
+      - Secretaria Acadêmica (secretaria-academica):                            
+      - - matrícula, cancelamento, trancamento, documentos, diploma, certificado
+      - - histórico ESCOLAR (documento acadêmico), declarações, requerimentos,  
+      protocolo                                                                 
+      - - correção de dados cadastrais (nome errado no portal)                  
+      -                                                                         
+      - Equipe de TI (equipe-de-ti):                                            
+      - - senhas, login, e-mail institucional, VPN, Wi-Fi, portal inacessível   
+      - - erros técnicos, site fora do ar, Q-Acadêmico com falha, sistemas e    
+      infraestrutura                                                            
+      -                                                                         
+      - IMPORTANTE:                                                             
+      - - 'histórico escolar' ou 'solicitar histórico' = documento da           
+      Secretaria, NUNCA TI.                                                     
+      - - Se a mensagem menciona documento E problema técnico (ex: diploma +    
+      site fora do ar), priorize TI.                                            
+      - - Se o aluno mudar de assunto na mesma conversa, delegue para o setor da
+      NOVA pergunta.                                                            
+      - - Se a NOVA mensagem mencionar login, senha ou erro técnico, mesmo após 
+      assunto administrativo, delegue para TI.                                  
+      - - Em continuações do MESMO assunto (ex: 'agora vou onde?'), delegue ao  
+      setor que estava tratando aquele tema.                                    
+      - - Se a intenção for vaga (ex: 'preciso de ajuda'), pergunte se é TI ou  
+      Secretaria ANTES de delegar.                                              
+      -                                                                         
+      - Exemplos:                                                               
+      - - 'Preciso solicitar meu histórico escolar' -> secretaria-academica     
+      - - 'Esqueci minha senha do portal' -> equipe-de-ti                       
+      - - 'Preciso do diploma, mas o site está fora do ar' -> equipe-de-ti      
+      - - 'Meu nome está errado no portal' -> secretaria-academica              
+      - - 'Olá, gostaria de ajuda' -> pergunte TI ou Secretaria (não delegue    
+      ainda)                                                                    
+      <additional_information>                                                  
+      - Use markdown to format your answers.                                    
+      </additional_information>                                                 
+DEBUG =========================== user ===========================              
+DEBUG ATENÇÃO: a nova mensagem contém termos técnicos (login, senha, acesso,    
+      erro). Avalie se o setor mudou para a Equipe de TI.                       
+                                                                                
+      Use o histórico abaixo apenas como contexto. Responda somente à NOVA      
+      mensagem do aluno — o assunto pode ter mudado de setor.                   
+                                                                                
+      Sistema: Olá! Bem-vindo ao **Portal de Atendimento Institucional do       
+      IFES**.                                                                   
+                                                                                
+      Nossa IA faz a triagem automática e encaminha sua solicitação para o setor
+      correto:                                                                  
+                                                                                
+      🖥️ **TI** — senhas, sistemas, acesso, e-mail                              
+      📋 **Secretaria** — matrícula, documentos, trancamentos, histórico        
+                                                                                
+      Como posso ajudá-lo hoje?                                                 
+                                                                                
+      Nova mensagem do aluno: Preciso do diploma, mas o site de emissão está    
+      fora do ar.                                                               
+DEBUG ======================== assistant =========================              
+DEBUG Tool Calls:                                                               
+        - ID: 'u7PkLagW'                                                        
+          Name: 'delegate_task_to_member'                                       
+          Arguments: 'task: O aluno precisa solicitar o diploma, mas relata que 
+      o site de emissão está fora do ar. Por favor, auxilie com a resolução     
+      deste erro técnico., member_id: equipe-de-ti'                             
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=1097, output=65, total=1162          
+DEBUG * Duration:                    1.5455s                                    
+DEBUG * Tokens per second:           42.0563 tokens/s                           
+DEBUG ************************  METRICS  *************************              
+DEBUG Running: delegate_task_to_member(task=..., member_id=equipe-de-ti)        
+DEBUG Adding messages from history for Equipe de TI                             
+DEBUG Member IDs to filter by were provided. The skip_member_messages flag will 
+      be ignored.                                                               
+DEBUG ***** Session ID: 434efe15-4272-4020-89e2-2bc2a40f4035 *****              
+DEBUG ****************** Agent ID: equipe-de-ti ******************              
+DEBUG Creating new AgentSession: 434efe15-4272-4020-89e2-2bc2a40f4035           
+DEBUG ** Agent Run Start: 7612b1df-d84e-4ca3-af87-46eb382474bb ***              
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG <your_role>                                                               
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)
+      </your_role>                                                              
+                                                                                
+      - Você é o técnico de Suporte de TI do IFES.                              
+      - Atenda APENAS problemas técnicos: senhas, login, e-mail, VPN, Wi-Fi,    
+      erros de sistema.                                                         
+      - NÃO trate de matrícula, documentos, histórico escolar ou trancamento.   
+      - Forneça passos claros e objetivos em markdown.                          
+      - Use listas numeradas quando possível.                                   
+DEBUG =========================== user ===========================              
+DEBUG O aluno precisa solicitar o diploma, mas relata que o site de emissão está
+      fora do ar. Por favor, auxilie com a resolução deste erro técnico.        
+DEBUG ======================== assistant =========================              
+DEBUG Olá. Como técnico de suporte de TI do IFES, esclareço que minha atuação é 
+      restrita a problemas de acesso a sistemas, credenciais (login/senha) e    
+      infraestrutura de rede.                                                   
+                                                                                
+      **Solicitações de diploma, emissão de documentos acadêmicos e histórico   
+      escolar são de competência exclusiva da Coordenadoria de Registros        
+      Acadêmicos (CRA) do seu campus.**                                         
+                                                                                
+      Portanto, não realizo suporte técnico relacionado a esse sistema. Para    
+      resolver sua demanda, siga os passos abaixo:                              
+                                                                                
+      1.  **Entre em contato com a CRA:** Acesse o site do seu campus no portal 
+      do IFES, localize a seção de "Contatos" e envie um e-mail ou ligue para a 
+      Coordenadoria de Registros Acadêmicos.                                    
+      2.  **Reporte o erro:** Ao entrar em contato, informe o erro específico   
+      que aparece na tela (se possível, anexe um print do erro) para que a      
+      equipe administrativa verifique se há uma instabilidade no servidor do    
+      sistema de diplomas.                                                      
+      3.  **Verificação Administrativa:** A equipe da CRA é a responsável por   
+      validar se o sistema está em manutenção ou se há alguma pendência         
+      documental que impeça a emissão.                                          
+                                                                                
+      Reitero que, por políticas internas, não tenho acesso nem permissão para  
+      intervir em processos acadêmicos ou plataformas de gestão escolar (como o 
+      Q-Acadêmico ou sistemas de diplomas).                                     
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=144, output=293, total=437           
+DEBUG * Duration:                    1.9129s                                    
+DEBUG * Tokens per second:           153.1735 tokens/s                          
+DEBUG * Time to first token:         1.9129s                                    
+DEBUG ************************  METRICS  *************************              
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Agent Session                                          
+DEBUG Table agno_approvals does not exist                                       
+DEBUG *** Agent Run End: 7612b1df-d84e-4ca3-af87-46eb382474bb ****              
+DEBUG Updated team run context with member name: Equipe de TI                   
+DEBUG Added RunOutput to Team Session                                           
+DEBUG =========================== tool ===========================              
+DEBUG Tool call Id: u7PkLagW                                                    
+DEBUG Olá. Como técnico de suporte de TI do IFES, esclareço que minha atuação é 
+      restrita a problemas de acesso a sistemas, credenciais (login/senha) e    
+      infraestrutura de rede.                                                   
+                                                                                
+      **Solicitações de diploma, emissão de documentos acadêmicos e histórico   
+      escolar são de competência exclusiva da Coordenadoria de Registros        
+      Acadêmicos (CRA) do seu campus.**                                         
+                                                                                
+      Portanto, não realizo suporte técnico relacionado a esse sistema. Para    
+      resolver sua demanda, siga os passos abaixo:                              
+                                                                                
+      1.  **Entre em contato com a CRA:** Acesse o site do seu campus no portal 
+      do IFES, localize a seção de "Contatos" e envie um e-mail ou ligue para a 
+      Coordenadoria de Registros Acadêmicos.                                    
+      2.  **Reporte o erro:** Ao entrar em contato, informe o erro específico   
+      que aparece na tela (se possível, anexe um print do erro) para que a      
+      equipe administrativa verifique se há uma instabilidade no servidor do    
+      sistema de diplomas.                                                      
+      3.  **Verificação Administrativa:** A equipe da CRA é a responsável por   
+      validar se o sistema está em manutenção ou se há alguma pendência         
+      documental que impeça a emissão.                                          
+                                                                                
+      Reitero que, por políticas internas, não tenho acesso nem permissão para  
+      intervir em processos acadêmicos ou plataformas de gestão escolar (como o 
+      Q-Acadêmico ou sistemas de diplomas).                                     
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Team Session                                           
+DEBUG Created or updated TeamSession record:                                    
+      434efe15-4272-4020-89e2-2bc2a40f4035                                      
+DEBUG Table agno_approvals does not exist                                       
+DEBUG **** Team Run End: f7cc60e2-2849-4f43-bee6-c9cb7be83200 ****              
+
+--- Resultado ---
+badge: 🖥️ Equipe de TI
+sector: ti
+resposta (início): Olá. Como técnico de suporte de TI do IFES, esclareço que minha atuação é restrita a problemas de acesso a sistemas, credenciais (login/senha) e infraestrutura de rede.
+
+**Solicitações de diploma, emissão de documentos acadêmicos e histórico escolar são de competência exclusiva da Coordenadoria de R...

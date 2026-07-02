@@ -1,0 +1,132 @@
+# MVP — projeto_ia_roteamento.py
+# Caso ID: 10
+# Prompt: "Olá, boa tarde! Gostaria de ajuda."
+# Destino esperado: ORCHESTRATOR
+# Executado em: 2026-06-19 20:11:06
+#===========================================================
+
+--- Execução caso 10 ---
+session_id: aea1f74c-3106-46cf-9123-e67fccf801cf
+active_sector: (nenhum)
+prompt: Olá, boa tarde! Gostaria de ajuda.
+
+DEBUG ********** Team ID: bot-de-suporte-institucional ***********              
+DEBUG ***** Session ID: aea1f74c-3106-46cf-9123-e67fccf801cf *****              
+DEBUG Creating new TeamSession: aea1f74c-3106-46cf-9123-e67fccf801cf            
+DEBUG *** Team Run Start: a185b9aa-0dcd-4e22-b140-bca0f13ae77d ***              
+DEBUG Processing tools for model                                                
+DEBUG Added tool delegate_task_to_member                                        
+DEBUG ------------------ Google Response Start -------------------              
+DEBUG --------------- Model: gemini-3.1-flash-lite ---------------              
+DEBUG ========================== system ==========================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's      
+      request. Delegate to members when their expertise or tools are needed. For
+      straightforward requests you can handle directly — including using your   
+      own tools — respond without delegating.                                   
+                                                                                
+      <team_members>                                                            
+      <member id="equipe-de-ti" name="Equipe de TI">                            
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas,        
+      infraestrutura)                                                           
+      </member>                                                                 
+      <member id="secretaria-academica" name="Secretaria Acadêmica">            
+        Role: Resolve questões administrativas (matrícula, documentos,          
+      trancamento, histórico escolar)                                           
+      </member>                                                                 
+      </team_members>                                                           
+                                                                                
+      <how_to_respond>                                                          
+      You operate in route mode. For requests that need member expertise,       
+      identify the single best member and delegate to them — their response is  
+      returned directly to the user. For requests you can handle directly —     
+      simple questions, using your own tools, or general conversation — respond 
+      without delegating.                                                       
+                                                                                
+      When routing to a member:                                                 
+      - Analyze the request to determine which member's role and tools are the  
+      best match.                                                               
+      - Delegate to exactly one member. Use only the member's ID — do not prefix
+      it with the team ID.                                                      
+      - Write the task to faithfully represent the user's full intent. Do not   
+      reinterpret or narrow the request.                                        
+      - If no member is a clear fit, choose the closest match and include any   
+      additional context the member might need.                                 
+      </how_to_respond>                                                         
+                                                                                
+      - Você é o roteador inteligente do Portal de Atendimento do IFES.         
+      - Sua função principal é delegar para UM membro especialista. Nunca       
+      misture os setores.                                                       
+      -                                                                         
+      - Secretaria Acadêmica (secretaria-academica):                            
+      - - matrícula, cancelamento, trancamento, documentos, diploma, certificado
+      - - histórico ESCOLAR (documento acadêmico), declarações, requerimentos,  
+      protocolo                                                                 
+      - - correção de dados cadastrais (nome errado no portal)                  
+      -                                                                         
+      - Equipe de TI (equipe-de-ti):                                            
+      - - senhas, login, e-mail institucional, VPN, Wi-Fi, portal inacessível   
+      - - erros técnicos, site fora do ar, Q-Acadêmico com falha, sistemas e    
+      infraestrutura                                                            
+      -                                                                         
+      - IMPORTANTE:                                                             
+      - - 'histórico escolar' ou 'solicitar histórico' = documento da           
+      Secretaria, NUNCA TI.                                                     
+      - - Se a mensagem menciona documento E problema técnico (ex: diploma +    
+      site fora do ar), priorize TI.                                            
+      - - Se o aluno mudar de assunto na mesma conversa, delegue para o setor da
+      NOVA pergunta.                                                            
+      - - Se a NOVA mensagem mencionar login, senha ou erro técnico, mesmo após 
+      assunto administrativo, delegue para TI.                                  
+      - - Em continuações do MESMO assunto (ex: 'agora vou onde?'), delegue ao  
+      setor que estava tratando aquele tema.                                    
+      - - Se a intenção for vaga (ex: 'preciso de ajuda'), pergunte se é TI ou  
+      Secretaria ANTES de delegar.                                              
+      -                                                                         
+      - Exemplos:                                                               
+      - - 'Preciso solicitar meu histórico escolar' -> secretaria-academica     
+      - - 'Esqueci minha senha do portal' -> equipe-de-ti                       
+      - - 'Preciso do diploma, mas o site está fora do ar' -> equipe-de-ti      
+      - - 'Meu nome está errado no portal' -> secretaria-academica              
+      - - 'Olá, gostaria de ajuda' -> pergunte TI ou Secretaria (não delegue    
+      ainda)                                                                    
+      <additional_information>                                                  
+      - Use markdown to format your answers.                                    
+      </additional_information>                                                 
+DEBUG =========================== user ===========================              
+DEBUG Use o histórico abaixo apenas como contexto. Responda somente à NOVA      
+      mensagem do aluno — o assunto pode ter mudado de setor.                   
+                                                                                
+      Sistema: Olá! Bem-vindo ao **Portal de Atendimento Institucional do       
+      IFES**.                                                                   
+                                                                                
+      Nossa IA faz a triagem automática e encaminha sua solicitação para o setor
+      correto:                                                                  
+                                                                                
+      🖥️ **TI** — senhas, sistemas, acesso, e-mail                              
+      📋 **Secretaria** — matrícula, documentos, trancamentos, histórico        
+                                                                                
+      Como posso ajudá-lo hoje?                                                 
+                                                                                
+      Nova mensagem do aluno: Olá, boa tarde! Gostaria de ajuda.                
+DEBUG ======================== assistant =========================              
+DEBUG Olá! Boa tarde. Para que eu possa encaminhar sua solicitação ao setor     
+      correto, você poderia me informar se o seu problema é relacionado à **TI**
+      (senhas, sistemas, acesso) ou à **Secretaria** (matrícula, documentos,    
+      histórico)?                                                               
+DEBUG ************************  METRICS  *************************              
+DEBUG * Tokens:                      input=1058, output=55, total=1113          
+DEBUG * Duration:                    1.0538s                                    
+DEBUG * Tokens per second:           52.1924 tokens/s                           
+DEBUG * Time to first token:         1.0538s                                    
+DEBUG ************************  METRICS  *************************              
+DEBUG ------------------- Google Response End --------------------              
+DEBUG Added RunOutput to Team Session                                           
+DEBUG Created or updated TeamSession record:                                    
+      aea1f74c-3106-46cf-9123-e67fccf801cf                                      
+DEBUG Table agno_approvals does not exist                                       
+DEBUG **** Team Run End: a185b9aa-0dcd-4e22-b140-bca0f13ae77d ****              
+
+--- Resultado ---
+badge: Assistente IA
+sector: orchestrator
+resposta (início): Olá! Boa tarde. Para que eu possa encaminhar sua solicitação ao setor correto, você poderia me informar se o seu problema é relacionado à **TI** (senhas, sistemas, acesso) ou à **Secretaria** (matrícula, documentos, histórico)?...

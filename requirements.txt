@@ -1,0 +1,4 @@
+reflex==0.9.5.post2
+agno
+google-genai
+python-dotenv

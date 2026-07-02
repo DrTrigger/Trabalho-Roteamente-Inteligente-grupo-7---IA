@@ -1,0 +1,321 @@
+PS C:\Users\breno\OneDrive\Área de Trabalho\projeto_ia_roteamento> python bot.py
+
+==================================================
+🎓 SISTEMA DE TRIAGEM INSTITUCIONAL INICIADO 🎓
+Digite 'sair' para encerrar.
+==================================================
+
+👤 Aluno: Não consigo acessar a rede Wi-Fi da biblioteca.
+
+🤖 Processando...
+
+DEBUG ************************************ Team ID: bot-de-suporte-institucional ************************************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History will not be added to the context.  
+DEBUG ******************************* Session ID: cbe6648d-6847-4be8-901f-2a91b39bf1d9 ******************************              
+DEBUG Creating new TeamSession: cbe6648d-6847-4be8-901f-2a91b39bf1d9                                                               
+DEBUG ***************************** Team Run Start: 8eb75cde-cc78-45c9-a833-7147df17715a ****************************              
+DEBUG Processing tools for model                                                                                                   
+DEBUG Added tool delegate_task_to_member                                                                                           
+DEBUG ----------------------------------------- Google Response Stream Start ----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite ----------------------------------------              
+DEBUG ==================================================== system ===================================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to members when their expertise or    
+      tools are needed. For straightforward requests you can handle directly — including using your own tools — respond without    
+      delegating.                                                                                                                  
+                                                                                                                                   
+      <team_members>                                                                                                               
+      <member id="equipe-de-ti" name="Equipe de TI">                                                                               
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                           
+      </member>                                                                                                                    
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                                                               
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                     
+      </member>                                                                                                                    
+      </team_members>                                                                                                              
+                                                                                                                                   
+      <how_to_respond>                                                                                                             
+      You operate in route mode. For requests that need member expertise, identify the single best member and delegate to them —   
+      their response is returned directly to the user. For requests you can handle directly — simple questions, using your own     
+      tools, or general conversation — respond without delegating.                                                                 
+                                                                                                                                   
+      When routing to a member:                                                                                                    
+      - Analyze the request to determine which member's role and tools are the best match.                                         
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team ID.                              
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow the request.                   
+      - If no member is a clear fit, choose the closest match and include any additional context the member might need.            
+      </how_to_respond>                                                                                                            
+                                                                                                                                   
+      - Você é o roteador de triagem da universidade.                                                                              
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.                                  
+      - Regras:                                                                                                                    
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                                                      
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                                                              
+      - NUNCA responda diretamente. Apenas delegue.                                                                                
+      <additional_information>                                                                                                     
+      - Use markdown to format your answers.                                                                                       
+      </additional_information>                                                                                                    
+DEBUG ===================================================== user ====================================================              
+DEBUG Não consigo acessar a rede Wi-Fi da biblioteca.                                                                              
+DEBUG ================================================== assistant ==================================================              
+DEBUG Tool Calls:                                                                                                                  
+        - ID: 'RHiZulXN'                                                                                                           
+          Name: 'delegate_task_to_member'                                                                                          
+          Arguments: 'member_id: equipe-de-ti, task: O usuário relata que não está conseguindo acessar a rede Wi-Fi da biblioteca. 
+      Por favor, verifique o problema técnico.'                                                                                    
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG * Tokens:                      input=587, output=59, total=646                                                               
+DEBUG * Duration:                    2.3088s                                                                                       
+DEBUG * Tokens per second:           25.5541 tokens/s                                                                              
+DEBUG * Time to first token:         2.3010s                                                                                       
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)                                                           
+DEBUG ******************************************** Agent ID: equipe-de-ti *******************************************              
+DEBUG Creating new AgentSession: cbe6648d-6847-4be8-901f-2a91b39bf1d9                                                              
+DEBUG **************************** Agent Run Start: a404ad2c-6f0e-49c4-9902-faf61d70a2f1 ****************************              
+DEBUG ----------------------------------------- Google Response Stream Start ----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite ----------------------------------------              
+DEBUG ==================================================== system ===================================================              
+DEBUG <your_role>                                                                                                                  
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                                   
+      </your_role>                                                                                                                 
+                                                                                                                                   
+      - Você é o técnico de Suporte de TI da universidade.                                                                         
+      - Forneça passos lógicos e formatados em markdown para resolver falhas tecnológicas.                                         
+DEBUG ===================================================== user ====================================================              
+DEBUG O usuário relata que não está conseguindo acessar a rede Wi-Fi da biblioteca. Por favor, verifique o problema técnico.       
+DEBUG ================================================== assistant ==================================================              
+DEBUG Olá. Compreendo que você está com dificuldades para acessar a rede Wi-Fi na biblioteca da universidade. Para que possamos    
+      solucionar esse problema, vamos seguir um protocolo de verificação passo a passo.                                            
+                                                                                                                                   
+      Por favor, execute as instruções abaixo na ordem indicada:                                                                   
+                                                                                                                                   
+      ### 1. Verificação de Credenciais                                                                                            
+      O erro pode estar relacionado a um bloqueio de conta ou expiração de senha.                                                  
+      *   **Ação:** Tente realizar o login no **Portal do Aluno/Servidor** através de um navegador (utilizando os dados móveis ou  
+      outro dispositivo).                                                                                                          
+      *   **Resultado esperado:** Se você não conseguir logar no portal, sua senha pode ter expirado ou sua conta estar bloqueada. 
+      *   **Correção:** Se for este o caso, acesse o portal de redefinição de senhas da universidade ou dirija-se presencialmente  
+      ao setor de suporte com seu documento de identificação.                                                                      
+                                                                                                                                   
+      ### 2. "Esquecer" e Reconectar a Rede                                                                                        
+      Às vezes, o dispositivo mantém configurações de rede corrompidas ou obsoletas.                                               
+      *   **Ação:**                                                                                                                
+          1.  Vá nas **Configurações de Wi-Fi** do seu dispositivo.                                                                
+          2.  Localize a rede da biblioteca (ex: `Uni-Biblioteca` ou `Eduroam`).                                                   
+          3.  Selecione a opção **"Esquecer rede"** (ou "Remover").                                                                
+          4.  Desative e reative o Wi-Fi.                                                                                          
+          5.  Tente conectar novamente e insira suas credenciais (usuário e senha) com atenção.                                    
+                                                                                                                                   
+      ### 3. Validação de Protocolo (Eduroam)                                                                                      
+      Se a rede utilizada for a **Eduroam**, ela exige uma configuração específica que muitos dispositivos não fazem               
+      automaticamente.                                                                                                             
+      *   **Ação:** Certifique-se de que, ao digitar o usuário, você está utilizando o formato completo:                           
+      `seu-usuario@universidade.edu.br`.                                                                                           
+      *   **Dica:** Caso seu dispositivo peça um certificado, certifique-se de que ele não esteja bloqueando a conexão por         
+      segurança. Em alguns casos, é necessário baixar o instalador oficial no site [cat.eduroam.org](https://cat.eduroam.org/).    
+                                                                                                                                   
+      ### 4. Verificação de Endereço IP (Conflito)                                                                                 
+      Se o dispositivo conectar, mas não navegar, o problema pode ser a obtenção de IP.                                            
+      *   **Ação:**                                                                                                                
+          *   No Windows: Abra o Prompt de Comando (CMD) e digite: `ipconfig /release` seguido de `ipconfig /renew`.               
+          *   No Android/iOS: Coloque o aparelho em **"Modo Avião"** por 10 segundos e desative-o. Isso força o dispositivo a      
+      solicitar um novo endereço IP ao servidor DHCP da biblioteca.                                                                
+                                                                                                                                   
+      ---                                                                                                                          
+                                                                                                                                   
+      **O problema persiste?**                                                                                                     
+      Caso você tenha executado todos os passos acima sem sucesso, por favor, me informe:                                          
+      1.  Qual é o **sistema operacional** do seu dispositivo (Windows, macOS, Android, iOS)?                                      
+      2.  Qual a **mensagem de erro** exata que aparece na tela (ex: "Falha na autenticação", "Obtendo endereço IP", ou "Sem       
+      conexão à Internet")?                                                                                                        
+      3.  Você consegue acessar a rede Wi-Fi em outros pontos do campus ou o erro é exclusivo da biblioteca?                       
+                                                                                                                                   
+      Fico no aguardo dessas informações para darmos continuidade ao atendimento.                                                  
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG * Tokens:                      input=91, output=742, total=833                                                               
+DEBUG * Duration:                    3.4587s                                                                                       
+DEBUG * Tokens per second:           214.5309 tokens/s                                                                             
+DEBUG * Time to first token:         1.1381s                                                                                       
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG ------------------------------------------ Google Response Stream End -----------------------------------------              
+DEBUG Added RunOutput to Agent Session                                                                                             
+DEBUG ***************************** Agent Run End: a404ad2c-6f0e-49c4-9902-faf61d70a2f1 *****************************              
+DEBUG Updated team run context with member name: Equipe de TI                                                                      
+DEBUG Added RunOutput to Team Session                                                                                              
+DEBUG ===================================================== tool ====================================================              
+DEBUG Tool call Id: RHiZulXN                                                                                                       
+DEBUG Olá. Compreendo que você está com dificuldades para acessar a rede Wi-Fi na biblioteca da universidade. Para que possamos    
+      solucionar esse problema, vamos seguir um protocolo de verificação passo a passo.                                            
+                                                                                                                                   
+      Por favor, execute as instruções abaixo na ordem indicada:                                                                   
+                                                                                                                                   
+      ### 1. Verificação de Credenciais                                                                                            
+      O erro pode estar relacionado a um bloqueio de conta ou expiração de senha.                                                  
+      *   **Ação:** Tente realizar o login no **Portal do Aluno/Servidor** através de um navegador (utilizando os dados móveis ou  
+      outro dispositivo).                                                                                                          
+      *   **Resultado esperado:** Se você não conseguir logar no portal, sua senha pode ter expirado ou sua conta estar bloqueada. 
+      *   **Correção:** Se for este o caso, acesse o portal de redefinição de senhas da universidade ou dirija-se presencialmente  
+      ao setor de suporte com seu documento de identificação.                                                                      
+                                                                                                                                   
+      ### 2. "Esquecer" e Reconectar a Rede                                                                                        
+      Às vezes, o dispositivo mantém configurações de rede corrompidas ou obsoletas.                                               
+      *   **Ação:**                                                                                                                
+          1.  Vá nas **Configurações de Wi-Fi** do seu dispositivo.                                                                
+          2.  Localize a rede da biblioteca (ex: `Uni-Biblioteca` ou `Eduroam`).                                                   
+          3.  Selecione a opção **"Esquecer rede"** (ou "Remover").                                                                
+          4.  Desative e reative o Wi-Fi.                                                                                          
+          5.  Tente conectar novamente e insira suas credenciais (usuário e senha) com atenção.                                    
+                                                                                                                                   
+      ### 3. Validação de Protocolo (Eduroam)                                                                                      
+      Se a rede utilizada for a **Eduroam**, ela exige uma configuração específica que muitos dispositivos não fazem               
+      automaticamente.                                                                                                             
+      *   **Ação:** Certifique-se de que, ao digitar o usuário, você está utilizando o formato completo:                           
+      `seu-usuario@universidade.edu.br`.                                                                                           
+      *   **Dica:** Caso seu dispositivo peça um certificado, certifique-se de que ele não esteja bloqueando a conexão por         
+      segurança. Em alguns casos, é necessário baixar o instalador oficial no site [cat.eduroam.org](https://cat.eduroam.org/).    
+                                                                                                                                   
+      ### 4. Verificação de Endereço IP (Conflito)                                                                                 
+      Se o dispositivo conectar, mas não navegar, o problema pode ser a obtenção de IP.                                            
+      *   **Ação:**                                                                                                                
+          *   No Windows: Abra o Prompt de Comando (CMD) e digite: `ipconfig /release` seguido de `ipconfig /renew`.               
+          *   No Android/iOS: Coloque o aparelho em **"Modo Avião"** por 10 segundos e desative-o. Isso força o dispositivo a      
+      solicitar um novo endereço IP ao servidor DHCP da biblioteca.                                                                
+                                                                                                                                   
+      ---                                                                                                                          
+                                                                                                                                   
+      **O problema persiste?**                                                                                                     
+      Caso você tenha executado todos os passos acima sem sucesso, por favor, me informe:                                          
+      1.  Qual é o **sistema operacional** do seu dispositivo (Windows, macOS, Android, iOS)?                                      
+      2.  Qual a **mensagem de erro** exata que aparece na tela (ex: "Falha na autenticação", "Obtendo endereço IP", ou "Sem       
+      conexão à Internet")?                                                                                                        
+      3.  Você consegue acessar a rede Wi-Fi em outros pontos do campus ou o erro é exclusivo da biblioteca?                       
+                                                                                                                                   
+      Fico no aguardo dessas informações para darmos continuidade ao atendimento.                                                  
+DEBUG ------------------------------------------ Google Response Stream End -----------------------------------------              
+DEBUG Added RunOutput to Team Session                                                                                              
+DEBUG ****************************** Team Run End: 8eb75cde-cc78-45c9-a833-7147df17715a *****************************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Não consigo acessar a rede Wi-Fi da biblioteca.                                                                                 ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Equipe de TI Response ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Olá. Compreendo que você está com dificuldades para acessar a rede Wi-Fi na biblioteca da universidade. Para que possamos       ┃
+┃ solucionar esse problema, vamos seguir um protocolo de verificação passo a passo.                                               ┃
+┃                                                                                                                                 ┃
+┃ Por favor, execute as instruções abaixo na ordem indicada:                                                                      ┃
+┃                                                                                                                                 ┃
+┃ 1. Verificação de Credenciais                                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ O erro pode estar relacionado a um bloqueio de conta ou expiração de senha.                                                     ┃
+┃                                                                                                                                 ┃
+┃  • Ação: Tente realizar o login no Portal do Aluno/Servidor através de um navegador (utilizando os dados móveis ou outro        ┃
+┃    dispositivo).                                                                                                                ┃
+┃  • Resultado esperado: Se você não conseguir logar no portal, sua senha pode ter expirado ou sua conta estar bloqueada.         ┃
+┃  • Correção: Se for este o caso, acesse o portal de redefinição de senhas da universidade ou dirija-se presencialmente ao setor ┃
+┃    de suporte com seu documento de identificação.                                                                               ┃
+┃                                                                                                                                 ┃
+┃ 2. "Esquecer" e Reconectar a Rede                                                                                               ┃
+┃                                                                                                                                 ┃
+┃ Às vezes, o dispositivo mantém configurações de rede corrompidas ou obsoletas.                                                  ┃
+┃                                                                                                                                 ┃
+┃  • Ação:                                                                                                                        ┃
+┃     1 Vá nas Configurações de Wi-Fi do seu dispositivo.                                                                         ┃
+┃     2 Localize a rede da biblioteca (ex: Uni-Biblioteca ou Eduroam).                                                            ┃
+┃     3 Selecione a opção "Esquecer rede" (ou "Remover").                                                                         ┃
+┃     4 Desative e reative o Wi-Fi.                                                                                               ┃
+┃     5 Tente conectar novamente e insira suas credenciais (usuário e senha) com atenção.                                         ┃
+┃                                                                                                                                 ┃
+┃ 3. Validação de Protocolo (Eduroam)                                                                                             ┃
+┃                                                                                                                                 ┃
+┃ Se a rede utilizada for a Eduroam, ela exige uma configuração específica que muitos dispositivos não fazem automaticamente.     ┃
+┃                                                                                                                                 ┃
+┃  • Ação: Certifique-se de que, ao digitar o usuário, você está utilizando o formato completo: seu-usuario@universidade.edu.br.  ┃
+┃  • Dica: Caso seu dispositivo peça um certificado, certifique-se de que ele não esteja bloqueando a conexão por segurança. Em   ┃
+┃    alguns casos, é necessário baixar o instalador oficial no site cat.eduroam.org.                                              ┃
+┃                                                                                                                                 ┃
+┃ 4. Verificação de Endereço IP (Conflito)                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Se o dispositivo conectar, mas não navegar, o problema pode ser a obtenção de IP.                                               ┃
+┃                                                                                                                                 ┃
+┃  • Ação:                                                                                                                        ┃
+┃     • No Windows: Abra o Prompt de Comando (CMD) e digite: ipconfig /release seguido de ipconfig /renew.                        ┃
+┃     • No Android/iOS: Coloque o aparelho em "Modo Avião" por 10 segundos e desative-o. Isso força o dispositivo a solicitar um  ┃
+┃       novo endereço IP ao servidor DHCP da biblioteca.                                                                          ┃
+┃                                                                                                                                 ┃
+┃ ------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                 ┃
+┃ O problema persiste? Caso você tenha executado todos os passos acima sem sucesso, por favor, me informe:                        ┃
+┃                                                                                                                                 ┃
+┃  1 Qual é o sistema operacional do seu dispositivo (Windows, macOS, Android, iOS)?                                              ┃
+┃  2 Qual a mensagem de erro exata que aparece na tela (ex: "Falha na autenticação", "Obtendo endereço IP", ou "Sem conexão à     ┃
+┃    Internet")?                                                                                                                  ┃
+┃  3 Você consegue acessar a rede Wi-Fi em outros pontos do campus ou o erro é exclusivo da biblioteca?                           ┃
+┃                                                                                                                                 ┃
+┃ Fico no aguardo dessas informações para darmos continuidade ao atendimento.                                                     ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Team Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ • delegate_task_to_member(member_id=equipe-de-ti, task=O usuário relata que não está conseguindo acessar a                      ┃
+┃   rede Wi-Fi da biblioteca. Por favor, verifique o problema técnico.)                                                           ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (7.6s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Olá. Compreendo que você está com dificuldades para acessar a rede Wi-Fi na biblioteca da universidade. Para que possamos       ┃
+┃ solucionar esse problema, vamos seguir um protocolo de verificação passo a passo.                                               ┃
+┃                                                                                                                                 ┃
+┃ Por favor, execute as instruções abaixo na ordem indicada:                                                                      ┃
+┃                                                                                                                                 ┃
+┃ 1. Verificação de Credenciais                                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ O erro pode estar relacionado a um bloqueio de conta ou expiração de senha.                                                     ┃
+┃                                                                                                                                 ┃
+┃  • Ação: Tente realizar o login no Portal do Aluno/Servidor através de um navegador (utilizando os dados móveis ou outro        ┃
+┃    dispositivo).                                                                                                                ┃
+┃  • Resultado esperado: Se você não conseguir logar no portal, sua senha pode ter expirado ou sua conta estar bloqueada.         ┃
+┃  • Correção: Se for este o caso, acesse o portal de redefinição de senhas da universidade ou dirija-se presencialmente ao setor ┃
+┃    de suporte com seu documento de identificação.                                                                               ┃
+┃                                                                                                                                 ┃
+┃ 2. "Esquecer" e Reconectar a Rede                                                                                               ┃
+┃                                                                                                                                 ┃
+┃ Às vezes, o dispositivo mantém configurações de rede corrompidas ou obsoletas.                                                  ┃
+┃                                                                                                                                 ┃
+┃  • Ação:                                                                                                                        ┃
+┃     1 Vá nas Configurações de Wi-Fi do seu dispositivo.                                                                         ┃
+┃     2 Localize a rede da biblioteca (ex: Uni-Biblioteca ou Eduroam).                                                            ┃
+┃     3 Selecione a opção "Esquecer rede" (ou "Remover").                                                                         ┃
+┃     4 Desative e reative o Wi-Fi.                                                                                               ┃
+┃     5 Tente conectar novamente e insira suas credenciais (usuário e senha) com atenção.                                         ┃
+┃                                                                                                                                 ┃
+┃ 3. Validação de Protocolo (Eduroam)                                                                                             ┃
+┃                                                                                                                                 ┃
+┃ Se a rede utilizada for a Eduroam, ela exige uma configuração específica que muitos dispositivos não fazem automaticamente.     ┃
+┃                                                                                                                                 ┃
+┃  • Ação: Certifique-se de que, ao digitar o usuário, você está utilizando o formato completo: seu-usuario@universidade.edu.br.  ┃
+┃  • Dica: Caso seu dispositivo peça um certificado, certifique-se de que ele não esteja bloqueando a conexão por segurança. Em   ┃
+┃    alguns casos, é necessário baixar o instalador oficial no site cat.eduroam.org.                                              ┃
+┃                                                                                                                                 ┃
+┃ 4. Verificação de Endereço IP (Conflito)                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Se o dispositivo conectar, mas não navegar, o problema pode ser a obtenção de IP.                                               ┃
+┃                                                                                                                                 ┃
+┃  • Ação:                                                                                                                        ┃
+┃     • No Windows: Abra o Prompt de Comando (CMD) e digite: ipconfig /release seguido de ipconfig /renew.                        ┃
+┃     • No Android/iOS: Coloque o aparelho em "Modo Avião" por 10 segundos e desative-o. Isso força o dispositivo a solicitar um  ┃
+┃       novo endereço IP ao servidor DHCP da biblioteca.                                                                          ┃
+┃                                                                                                                                 ┃
+┃ ------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                 ┃
+┃ O problema persiste? Caso você tenha executado todos os passos acima sem sucesso, por favor, me informe:                        ┃
+┃                                                                                                                                 ┃
+┃  1 Qual é o sistema operacional do seu dispositivo (Windows, macOS, Android, iOS)?                                              ┃
+┃  2 Qual a mensagem de erro exata que aparece na tela (ex: "Falha na autenticação", "Obtendo endereço IP", ou "Sem conexão à     ┃
+┃    Internet")?                                                                                                                  ┃
+┃  3 Você consegue acessar a rede Wi-Fi em outros pontos do campus ou o erro é exclusivo da biblioteca?                           ┃
+┃                                                                                                                                 ┃
+┃ Fico no aguardo dessas informações para darmos continuidade ao atendimento.                                                     ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+--------------------------------------------------

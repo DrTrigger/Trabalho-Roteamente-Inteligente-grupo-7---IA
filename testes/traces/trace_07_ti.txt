@@ -1,0 +1,307 @@
+PS C:\Users\breno\OneDrive\Área de Trabalho\projeto_ia_roteamento> python bot.py
+
+==================================================
+🎓 SISTEMA DE TRIAGEM INSTITUCIONAL INICIADO 🎓
+Digite 'sair' para encerrar.
+==================================================
+
+👤 Aluno: Estou tentando enviar meu TCC pelo sistema, mas dá erro 500.
+
+🤖 Processando...
+
+DEBUG ************************************ Team ID: bot-de-suporte-institucional ************************************              
+WARNING  add_history_to_context is True, but no database has been assigned to the team. History will not be added to the context.  
+DEBUG ******************************* Session ID: 365fb2f4-397d-45e8-9909-5955ee3a10c3 ******************************              
+DEBUG Creating new TeamSession: 365fb2f4-397d-45e8-9909-5955ee3a10c3                                                               
+DEBUG ***************************** Team Run Start: 996fc41f-05c6-4562-8d52-ce4cfbb6523c ****************************              
+DEBUG Processing tools for model                                                                                                   
+DEBUG Added tool delegate_task_to_member                                                                                           
+DEBUG ----------------------------------------- Google Response Stream Start ----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite ----------------------------------------              
+DEBUG ==================================================== system ===================================================              
+DEBUG You coordinate a team of specialized AI agents to fulfill the user's request. Delegate to members when their expertise or    
+      tools are needed. For straightforward requests you can handle directly — including using your own tools — respond without    
+      delegating.                                                                                                                  
+                                                                                                                                   
+      <team_members>                                                                                                               
+      <member id="equipe-de-ti" name="Equipe de TI">                                                                               
+        Role: Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                           
+      </member>                                                                                                                    
+      <member id="secretaria-acadêmica" name="Secretaria Acadêmica">                                                               
+        Role: Resolve questões administrativas (matrícula, documentos, trancamento, histórico)                                     
+      </member>                                                                                                                    
+      </team_members>                                                                                                              
+                                                                                                                                   
+      <how_to_respond>                                                                                                             
+      You operate in route mode. For requests that need member expertise, identify the single best member and delegate to them —   
+      their response is returned directly to the user. For requests you can handle directly — simple questions, using your own     
+      tools, or general conversation — respond without delegating.                                                                 
+                                                                                                                                   
+      When routing to a member:                                                                                                    
+      - Analyze the request to determine which member's role and tools are the best match.                                         
+      - Delegate to exactly one member. Use only the member's ID — do not prefix it with the team ID.                              
+      - Write the task to faithfully represent the user's full intent. Do not reinterpret or narrow the request.                   
+      - If no member is a clear fit, choose the closest match and include any additional context the member might need.            
+      </how_to_respond>                                                                                                            
+                                                                                                                                   
+      - Você é o roteador de triagem da universidade.                                                                              
+      - Sua única função é encaminhar a solicitação com o contexto correto para TI ou Secretaria.                                  
+      - Regras:                                                                                                                    
+      - - Falhas de acesso, sistemas e senhas -> Equipe de TI                                                                      
+      - - Burocracia, documentos e matrículas -> Secretaria Acadêmica                                                              
+      - NUNCA responda diretamente. Apenas delegue.                                                                                
+      <additional_information>                                                                                                     
+      - Use markdown to format your answers.                                                                                       
+      </additional_information>                                                                                                    
+DEBUG ===================================================== user ====================================================              
+DEBUG Estou tentando enviar meu TCC pelo sistema, mas dá erro 500.                                                                 
+DEBUG ================================================== assistant ==================================================              
+DEBUG Tool Calls:                                                                                                                  
+        - ID: 'qw2j5mmp'                                                                                                           
+          Name: 'delegate_task_to_member'                                                                                          
+          Arguments: 'member_id: equipe-de-ti, task: O aluno relatou que está recebendo um erro 500 ao tentar enviar o TCC pelo    
+      sistema. Por favor, verifique o problema técnico.'                                                                           
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG * Tokens:                      input=594, output=64, total=658                                                               
+DEBUG * Duration:                    1.2435s                                                                                       
+DEBUG * Tokens per second:           51.4688 tokens/s                                                                              
+DEBUG * Time to first token:         1.2344s                                                                                       
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG Running: delegate_task_to_member(member_id=equipe-de-ti, task=...)                                                           
+DEBUG ******************************************** Agent ID: equipe-de-ti *******************************************              
+DEBUG Creating new AgentSession: 365fb2f4-397d-45e8-9909-5955ee3a10c3                                                              
+DEBUG **************************** Agent Run Start: 0f3ea4a0-90e1-4977-8694-407bae90629a ****************************              
+DEBUG ----------------------------------------- Google Response Stream Start ----------------------------------------              
+DEBUG ----------------------------------------- Model: gemini-3.1-flash-lite ----------------------------------------              
+DEBUG ==================================================== system ===================================================              
+DEBUG <your_role>                                                                                                                  
+      Resolve problemas técnicos de TI (senhas, login, sistemas, infraestrutura)                                                   
+      </your_role>                                                                                                                 
+                                                                                                                                   
+      - Você é o técnico de Suporte de TI da universidade.                                                                         
+      - Forneça passos lógicos e formatados em markdown para resolver falhas tecnológicas.                                         
+DEBUG ===================================================== user ====================================================              
+DEBUG O aluno relatou que está recebendo um erro 500 ao tentar enviar o TCC pelo sistema. Por favor, verifique o problema técnico. 
+DEBUG ================================================== assistant ==================================================              
+DEBUG Olá. Compreendo a urgência, pois o envio do TCC é um momento crítico. O **Erro 500 (Internal Server Error)** indica que houve
+      uma falha inesperada no servidor da universidade ao processar a sua requisição.                                              
+                                                                                                                                   
+      Para tentarmos isolar o problema e normalizar o envio, por favor, siga os passos abaixo em ordem:                            
+                                                                                                                                   
+      ### 1. Limpeza de Cache e Cookies                                                                                            
+      Muitas vezes, arquivos temporários corrompidos no navegador impedem a comunicação correta com o servidor.                    
+      *   Pressione `Ctrl + Shift + Del` (no Windows) ou `Cmd + Shift + Del` (no Mac).                                             
+      *   Selecione o intervalo de tempo como **"Todo o período"**.                                                                
+      *   Marque **"Imagens e arquivos em cache"** e **"Cookies e outros dados do site"**.                                         
+      *   Clique em **"Limpar dados"**, feche o navegador e tente abrir novamente.                                                 
+                                                                                                                                   
+      ### 2. Teste em Modo Anônimo                                                                                                 
+      Isso elimina a interferência de extensões ou bloqueadores de anúncios que podem estar corrompendo o upload.                  
+      *   No navegador, pressione `Ctrl + Shift + N` (Chrome/Edge) ou `Ctrl + Shift + P` (Firefox).                                
+      *   Tente realizar o envio através desta janela.                                                                             
+                                                                                                                                   
+      ### 3. Verificação do Arquivo (Tamanho e Formato)                                                                            
+      Sistemas acadêmicos costumam ter limites rígidos para evitar sobrecarga no servidor.                                         
+      *   **Tamanho:** Verifique se o seu arquivo excede o limite máximo permitido (geralmente 10MB ou 20MB). Se for maior, tente  
+      comprimir o arquivo PDF.                                                                                                     
+      *   **Formato:** Certifique-se de que o arquivo está em formato **PDF** padrão, sem restrições de edição ou senhas de        
+      proteção.                                                                                                                    
+      *   **Nome do arquivo:** Evite caracteres especiais (como `ç`, `~`, `^`, `!`, `@`, `#`) ou espaços excessivos no nome do     
+      arquivo. Renomeie algo simples como `TCC_Nome_Sobrenome.pdf`.                                                                
+                                                                                                                                   
+      ### 4. Troca de Rede                                                                                                         
+      Se você estiver utilizando a rede Wi-Fi da universidade ou uma VPN, tente realizar o procedimento através de outra rede (ex: 
+      rotear a internet do seu celular ou usar outra conexão banda larga).                                                         
+                                                                                                                                   
+      ---                                                                                                                          
+                                                                                                                                   
+      ### Se o problema persistir:                                                                                                 
+      Caso as orientações acima não resolvam, o erro é sistêmico no servidor e precisarei que você me envie as seguintes           
+      informações para que a nossa equipe de infraestrutura verifique os logs:                                                     
+                                                                                                                                   
+      1.  **Print da tela** contendo o erro 500.                                                                                   
+      2.  **Seu número de matrícula.**                                                                                             
+      3.  **Nome completo.**                                                                                                       
+      4.  **O nome do arquivo** que está tentando enviar e o **tamanho aproximado** dele.                                          
+      5.  **Data e hora exata** da última tentativa de envio.                                                                      
+                                                                                                                                   
+      Aguardo seu retorno com esses dados para prosseguir com o chamado técnico.                                                   
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG * Tokens:                      input=96, output=651, total=747                                                               
+DEBUG * Duration:                    3.8407s                                                                                       
+DEBUG * Tokens per second:           169.5004 tokens/s                                                                             
+DEBUG * Time to first token:         1.0488s                                                                                       
+DEBUG **************************************************  METRICS  **************************************************              
+DEBUG ------------------------------------------ Google Response Stream End -----------------------------------------              
+DEBUG Added RunOutput to Agent Session                                                                                             
+DEBUG ***************************** Agent Run End: 0f3ea4a0-90e1-4977-8694-407bae90629a *****************************              
+DEBUG Updated team run context with member name: Equipe de TI                                                                      
+DEBUG Added RunOutput to Team Session                                                                                              
+DEBUG ===================================================== tool ====================================================              
+DEBUG Tool call Id: qw2j5mmp                                                                                                       
+DEBUG Olá. Compreendo a urgência, pois o envio do TCC é um momento crítico. O **Erro 500 (Internal Server Error)** indica que houve
+      uma falha inesperada no servidor da universidade ao processar a sua requisição.                                              
+                                                                                                                                   
+      Para tentarmos isolar o problema e normalizar o envio, por favor, siga os passos abaixo em ordem:                            
+                                                                                                                                   
+      ### 1. Limpeza de Cache e Cookies                                                                                            
+      Muitas vezes, arquivos temporários corrompidos no navegador impedem a comunicação correta com o servidor.                    
+      *   Pressione `Ctrl + Shift + Del` (no Windows) ou `Cmd + Shift + Del` (no Mac).                                             
+      *   Selecione o intervalo de tempo como **"Todo o período"**.                                                                
+      *   Marque **"Imagens e arquivos em cache"** e **"Cookies e outros dados do site"**.                                         
+      *   Clique em **"Limpar dados"**, feche o navegador e tente abrir novamente.                                                 
+                                                                                                                                   
+      ### 2. Teste em Modo Anônimo                                                                                                 
+      Isso elimina a interferência de extensões ou bloqueadores de anúncios que podem estar corrompendo o upload.                  
+      *   No navegador, pressione `Ctrl + Shift + N` (Chrome/Edge) ou `Ctrl + Shift + P` (Firefox).                                
+      *   Tente realizar o envio através desta janela.                                                                             
+                                                                                                                                   
+      ### 3. Verificação do Arquivo (Tamanho e Formato)                                                                            
+      Sistemas acadêmicos costumam ter limites rígidos para evitar sobrecarga no servidor.                                         
+      *   **Tamanho:** Verifique se o seu arquivo excede o limite máximo permitido (geralmente 10MB ou 20MB). Se for maior, tente  
+      comprimir o arquivo PDF.                                                                                                     
+      *   **Formato:** Certifique-se de que o arquivo está em formato **PDF** padrão, sem restrições de edição ou senhas de        
+      proteção.                                                                                                                    
+      *   **Nome do arquivo:** Evite caracteres especiais (como `ç`, `~`, `^`, `!`, `@`, `#`) ou espaços excessivos no nome do     
+      arquivo. Renomeie algo simples como `TCC_Nome_Sobrenome.pdf`.                                                                
+                                                                                                                                   
+      ### 4. Troca de Rede                                                                                                         
+      Se você estiver utilizando a rede Wi-Fi da universidade ou uma VPN, tente realizar o procedimento através de outra rede (ex: 
+      rotear a internet do seu celular ou usar outra conexão banda larga).                                                         
+                                                                                                                                   
+      ---                                                                                                                          
+                                                                                                                                   
+      ### Se o problema persistir:                                                                                                 
+      Caso as orientações acima não resolvam, o erro é sistêmico no servidor e precisarei que você me envie as seguintes           
+      informações para que a nossa equipe de infraestrutura verifique os logs:                                                     
+                                                                                                                                   
+      1.  **Print da tela** contendo o erro 500.                                                                                   
+      2.  **Seu número de matrícula.**                                                                                             
+      3.  **Nome completo.**                                                                                                       
+      4.  **O nome do arquivo** que está tentando enviar e o **tamanho aproximado** dele.                                          
+      5.  **Data e hora exata** da última tentativa de envio.                                                                      
+                                                                                                                                   
+      Aguardo seu retorno com esses dados para prosseguir com o chamado técnico.                                                   
+DEBUG ------------------------------------------ Google Response Stream End -----------------------------------------              
+DEBUG Added RunOutput to Team Session                                                                                              
+DEBUG ****************************** Team Run End: 996fc41f-05c6-4562-8d52-ce4cfbb6523c *****************************              
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Estou tentando enviar meu TCC pelo sistema, mas dá erro 500.                                                                    ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Equipe de TI Response ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Olá. Compreendo a urgência, pois o envio do TCC é um momento crítico. O Erro 500 (Internal Server Error) indica que houve uma   ┃
+┃ falha inesperada no servidor da universidade ao processar a sua requisição.                                                     ┃
+┃                                                                                                                                 ┃
+┃ Para tentarmos isolar o problema e normalizar o envio, por favor, siga os passos abaixo em ordem:                               ┃
+┃                                                                                                                                 ┃
+┃ 1. Limpeza de Cache e Cookies                                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ Muitas vezes, arquivos temporários corrompidos no navegador impedem a comunicação correta com o servidor.                       ┃
+┃                                                                                                                                 ┃
+┃  • Pressione Ctrl + Shift + Del (no Windows) ou Cmd + Shift + Del (no Mac).                                                     ┃
+┃  • Selecione o intervalo de tempo como "Todo o período".                                                                        ┃
+┃  • Marque "Imagens e arquivos em cache" e "Cookies e outros dados do site".                                                     ┃
+┃  • Clique em "Limpar dados", feche o navegador e tente abrir novamente.                                                         ┃
+┃                                                                                                                                 ┃
+┃ 2. Teste em Modo Anônimo                                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Isso elimina a interferência de extensões ou bloqueadores de anúncios que podem estar corrompendo o upload.                     ┃
+┃                                                                                                                                 ┃
+┃  • No navegador, pressione Ctrl + Shift + N (Chrome/Edge) ou Ctrl + Shift + P (Firefox).                                        ┃
+┃  • Tente realizar o envio através desta janela.                                                                                 ┃
+┃                                                                                                                                 ┃
+┃ 3. Verificação do Arquivo (Tamanho e Formato)                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ Sistemas acadêmicos costumam ter limites rígidos para evitar sobrecarga no servidor.                                            ┃
+┃                                                                                                                                 ┃
+┃  • Tamanho: Verifique se o seu arquivo excede o limite máximo permitido (geralmente 10MB ou 20MB). Se for maior, tente          ┃
+┃    comprimir o arquivo PDF.                                                                                                     ┃
+┃  • Formato: Certifique-se de que o arquivo está em formato PDF padrão, sem restrições de edição ou senhas de proteção.          ┃
+┃  • Nome do arquivo: Evite caracteres especiais (como ç, ~, ^, !, @, #) ou espaços excessivos no nome do arquivo. Renomeie algo  ┃
+┃    simples como TCC_Nome_Sobrenome.pdf.                                                                                         ┃
+┃                                                                                                                                 ┃
+┃ 4. Troca de Rede                                                                                                                ┃
+┃                                                                                                                                 ┃
+┃ Se você estiver utilizando a rede Wi-Fi da universidade ou uma VPN, tente realizar o procedimento através de outra rede (ex:    ┃
+┃ rotear a internet do seu celular ou usar outra conexão banda larga).                                                            ┃
+┃                                                                                                                                 ┃
+┃ ------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                 ┃
+┃ Se o problema persistir:                                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Caso as orientações acima não resolvam, o erro é sistêmico no servidor e precisarei que você me envie as seguintes informações  ┃
+┃ para que a nossa equipe de infraestrutura verifique os logs:                                                                    ┃
+┃                                                                                                                                 ┃
+┃  1 Print da tela contendo o erro 500.                                                                                           ┃
+┃  2 Seu número de matrícula.                                                                                                     ┃
+┃  3 Nome completo.                                                                                                               ┃
+┃  4 O nome do arquivo que está tentando enviar e o tamanho aproximado dele.                                                      ┃
+┃  5 Data e hora exata da última tentativa de envio.                                                                              ┃
+┃                                                                                                                                 ┃
+┃ Aguardo seu retorno com esses dados para prosseguir com o chamado técnico.                                                      ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Team Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ • delegate_task_to_member(member_id=equipe-de-ti, task=O aluno relatou que está recebendo um erro 500 ao                        ┃
+┃   tentar enviar o TCC pelo sistema. Por favor, verifique o problema técnico.)                                                   ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (7.3s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                                 ┃
+┃ Olá. Compreendo a urgência, pois o envio do TCC é um momento crítico. O Erro 500 (Internal Server Error) indica que houve uma   ┃
+┃ falha inesperada no servidor da universidade ao processar a sua requisição.                                                     ┃
+┃                                                                                                                                 ┃
+┃ Para tentarmos isolar o problema e normalizar o envio, por favor, siga os passos abaixo em ordem:                               ┃
+┃                                                                                                                                 ┃
+┃ 1. Limpeza de Cache e Cookies                                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ Muitas vezes, arquivos temporários corrompidos no navegador impedem a comunicação correta com o servidor.                       ┃
+┃                                                                                                                                 ┃
+┃  • Pressione Ctrl + Shift + Del (no Windows) ou Cmd + Shift + Del (no Mac).                                                     ┃
+┃  • Selecione o intervalo de tempo como "Todo o período".                                                                        ┃
+┃  • Marque "Imagens e arquivos em cache" e "Cookies e outros dados do site".                                                     ┃
+┃  • Clique em "Limpar dados", feche o navegador e tente abrir novamente.                                                         ┃
+┃                                                                                                                                 ┃
+┃ 2. Teste em Modo Anônimo                                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Isso elimina a interferência de extensões ou bloqueadores de anúncios que podem estar corrompendo o upload.                     ┃
+┃                                                                                                                                 ┃
+┃  • No navegador, pressione Ctrl + Shift + N (Chrome/Edge) ou Ctrl + Shift + P (Firefox).                                        ┃
+┃  • Tente realizar o envio através desta janela.                                                                                 ┃
+┃                                                                                                                                 ┃
+┃ 3. Verificação do Arquivo (Tamanho e Formato)                                                                                   ┃
+┃                                                                                                                                 ┃
+┃ Sistemas acadêmicos costumam ter limites rígidos para evitar sobrecarga no servidor.                                            ┃
+┃                                                                                                                                 ┃
+┃  • Tamanho: Verifique se o seu arquivo excede o limite máximo permitido (geralmente 10MB ou 20MB). Se for maior, tente          ┃
+┃    comprimir o arquivo PDF.                                                                                                     ┃
+┃  • Formato: Certifique-se de que o arquivo está em formato PDF padrão, sem restrições de edição ou senhas de proteção.          ┃
+┃  • Nome do arquivo: Evite caracteres especiais (como ç, ~, ^, !, @, #) ou espaços excessivos no nome do arquivo. Renomeie algo  ┃
+┃    simples como TCC_Nome_Sobrenome.pdf.                                                                                         ┃
+┃                                                                                                                                 ┃
+┃ 4. Troca de Rede                                                                                                                ┃
+┃                                                                                                                                 ┃
+┃ Se você estiver utilizando a rede Wi-Fi da universidade ou uma VPN, tente realizar o procedimento através de outra rede (ex:    ┃
+┃ rotear a internet do seu celular ou usar outra conexão banda larga).                                                            ┃
+┃                                                                                                                                 ┃
+┃ ------------------------------------------------------------------------------------------------------------------------------- ┃
+┃                                                                                                                                 ┃
+┃ Se o problema persistir:                                                                                                        ┃
+┃                                                                                                                                 ┃
+┃ Caso as orientações acima não resolvam, o erro é sistêmico no servidor e precisarei que você me envie as seguintes informações  ┃
+┃ para que a nossa equipe de infraestrutura verifique os logs:                                                                    ┃
+┃                                                                                                                                 ┃
+┃  1 Print da tela contendo o erro 500.                                                                                           ┃
+┃  2 Seu número de matrícula.                                                                                                     ┃
+┃  3 Nome completo.                                                                                                               ┃
+┃  4 O nome do arquivo que está tentando enviar e o tamanho aproximado dele.                                                      ┃
+┃  5 Data e hora exata da última tentativa de envio.                                                                              ┃
+┃                                                                                                                                 ┃
+┃ Aguardo seu retorno com esses dados para prosseguir com o chamado técnico.                                                      ┃
+┃                                                                                                                                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+--------------------------------------------------
