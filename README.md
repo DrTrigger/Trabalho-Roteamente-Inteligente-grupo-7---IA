@@ -33,3 +33,4 @@ Acesse o portal no navegador, use os atalhos ou digite sua solicitação.
 - `testes/traces/projeto_ia_roteamento/` — reasoning traces do MVP (entrega final)
 - `testes/traces/` — traces históricos do `bot.py`
 - `docs/relatorio_tecnico.md` — relatório técnico do trabalho
+- `docs/relatorio_final.pdf` — [docs/TUTORIAL_INSTALACAO_WINDOWS.md](docs/relatorio_final.pdf)
